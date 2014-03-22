@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140322004150) do
+ActiveRecord::Schema.define(:version => 20140322005449) do
+
+  create_table "job_applications", :force => true do |t|
+    t.integer  "job_id",     :default => 0,  :null => false
+    t.integer  "user_id",    :default => 0,  :null => false
+    t.string   "fullname",   :default => "", :null => false
+    t.string   "email",      :default => "", :null => false
+    t.string   "contactno",  :default => "", :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+  end
+
+  add_index "job_applications", ["job_id"], :name => "index_job_applications_on_job_id"
 
   create_table "job_posts", :force => true do |t|
     t.string   "fullname",      :default => "",    :null => false
