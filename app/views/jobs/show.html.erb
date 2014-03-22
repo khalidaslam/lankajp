@@ -1,0 +1,65 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @job.user_id %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @job.title %>
+</p>
+
+<p>
+  <b>Jobuuid:</b>
+  <%= @job.jobuuid %>
+</p>
+
+<p>
+  <b>Employerlinkcode:</b>
+  <%= @job.employerlinkcode %>
+</p>
+
+<p>
+  <b>Tags:</b>
+  <%= @job.tags %>
+</p>
+
+<p>
+  <b>Companyname:</b>
+  <%= @job.companyname %>
+</p>
+
+<p>
+  <b>Companyemail:</b>
+  <%= @job.companyemail %>
+</p>
+
+<p>
+  <b>Companyphone:</b>
+  <%= @job.companyphone %>
+</p>
+
+<p>
+  <b>Jobposttype:</b>
+  <%= @job.jobposttype %>
+</p>
+
+<p>
+  <b>Freejobpost:</b>
+  <%= @job.freejobpost %>
+</p>
+
+<p>
+  <b>Cvemailoption:</b>
+  <%= @job.cvemailoption %>
+</p>
+
+<p>
+  <b>Postemailack:</b>
+  <%= @job.postemailack %>
+</p>
+
+
+<%= link_to 'Edit', edit_job_path(@job) %> |
+<%= link_to 'Back', jobs_path %>

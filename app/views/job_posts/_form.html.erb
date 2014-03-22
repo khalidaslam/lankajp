@@ -1,0 +1,45 @@
+<%= form_for(@job_post) do |f| %>
+  <% if @job_post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@job_post.errors.count, "error") %> prohibited this job_post from being saved:</h2>
+
+      <ul>
+      <% @job_post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :fullname %><br />
+    <%= f.text_field :fullname %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :conactno %><br />
+    <%= f.text_field :conactno %>
+  </div>
+  <div class="field">
+    <%= f.label :jobuuid %><br />
+    <%= f.text_field :jobuuid %>
+  </div>
+  <div class="field">
+    <%= f.label :jobposttype %><br />
+    <%= f.text_field :jobposttype %>
+  </div>
+  <div class="field">
+    <%= f.label :terms %><br />
+    <%= f.check_box :terms %>
+  </div>
+  <div class="field">
+    <%= f.label :cvemailoption %><br />
+    <%= f.check_box :cvemailoption %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

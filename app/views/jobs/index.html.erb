@@ -1,0 +1,45 @@
+<h1>Listing jobs</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Title</th>
+    <th>Jobuuid</th>
+    <th>Employerlinkcode</th>
+    <th>Tags</th>
+    <th>Companyname</th>
+    <th>Companyemail</th>
+    <th>Companyphone</th>
+    <th>Jobposttype</th>
+    <th>Freejobpost</th>
+    <th>Cvemailoption</th>
+    <th>Postemailack</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @jobs.each do |job| %>
+  <tr>
+    <td><%= job.user_id %></td>
+    <td><%= job.title %></td>
+    <td><%= job.jobuuid %></td>
+    <td><%= job.employerlinkcode %></td>
+    <td><%= job.tags %></td>
+    <td><%= job.companyname %></td>
+    <td><%= job.companyemail %></td>
+    <td><%= job.companyphone %></td>
+    <td><%= job.jobposttype %></td>
+    <td><%= job.freejobpost %></td>
+    <td><%= job.cvemailoption %></td>
+    <td><%= job.postemailack %></td>
+    <td><%= link_to 'Show', job %></td>
+    <td><%= link_to 'Edit', edit_job_path(job) %></td>
+    <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Job', new_job_path %>

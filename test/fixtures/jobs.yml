@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  title: MyString
+  jobuuid: MyString
+  employerlinkcode: MyString
+  tags: MyText
+  companyname: MyString
+  companyemail: MyString
+  companyphone: MyString
+  jobposttype: MyString
+  freejobpost: false
+  cvemailoption: false
+  postemailack: false
+
+two:
+  user_id: 1
+  title: MyString
+  jobuuid: MyString
+  employerlinkcode: MyString
+  tags: MyText
+  companyname: MyString
+  companyemail: MyString
+  companyphone: MyString
+  jobposttype: MyString
+  freejobpost: false
+  cvemailoption: false
+  postemailack: false

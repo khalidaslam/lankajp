@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Fullname:</b>
+  <%= @job_post.fullname %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @job_post.email %>
+</p>
+
+<p>
+  <b>Conactno:</b>
+  <%= @job_post.conactno %>
+</p>
+
+<p>
+  <b>Jobuuid:</b>
+  <%= @job_post.jobuuid %>
+</p>
+
+<p>
+  <b>Jobposttype:</b>
+  <%= @job_post.jobposttype %>
+</p>
+
+<p>
+  <b>Terms:</b>
+  <%= @job_post.terms %>
+</p>
+
+<p>
+  <b>Cvemailoption:</b>
+  <%= @job_post.cvemailoption %>
+</p>
+
+
+<%= link_to 'Edit', edit_job_post_path(@job_post) %> |
+<%= link_to 'Back', job_posts_path %>

@@ -11,7 +11,36 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140321221358) do
+ActiveRecord::Schema.define(:version => 20140322004150) do
+
+  create_table "job_posts", :force => true do |t|
+    t.string   "fullname",      :default => "",    :null => false
+    t.string   "email",         :default => "",    :null => false
+    t.string   "conactno",      :default => "",    :null => false
+    t.string   "jobuuid",       :default => "",    :null => false
+    t.string   "jobposttype",   :default => "",    :null => false
+    t.boolean  "terms",         :default => false, :null => false
+    t.boolean  "cvemailoption", :default => false, :null => false
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+  end
+
+  create_table "jobs", :force => true do |t|
+    t.integer  "user_id",          :default => 0,     :null => false
+    t.string   "title",            :default => "",    :null => false
+    t.string   "jobuuid",          :default => "",    :null => false
+    t.string   "employerlinkcode", :default => "",    :null => false
+    t.text     "tags",             :default => "",    :null => false
+    t.string   "companyname",      :default => "",    :null => false
+    t.string   "companyemail",     :default => "",    :null => false
+    t.string   "companyphone",     :default => "",    :null => false
+    t.string   "jobposttype",      :default => "",    :null => false
+    t.boolean  "freejobpost",      :default => false, :null => false
+    t.boolean  "cvemailoption",    :default => false, :null => false
+    t.boolean  "postemailack",     :default => false, :null => false
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "fullname",               :default => "",    :null => false

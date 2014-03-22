@@ -1,0 +1,65 @@
+<%= form_for(@job) do |f| %>
+  <% if @job.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>
+
+      <ul>
+      <% @job.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :jobuuid %><br />
+    <%= f.text_field :jobuuid %>
+  </div>
+  <div class="field">
+    <%= f.label :employerlinkcode %><br />
+    <%= f.text_field :employerlinkcode %>
+  </div>
+  <div class="field">
+    <%= f.label :tags %><br />
+    <%= f.text_area :tags %>
+  </div>
+  <div class="field">
+    <%= f.label :companyname %><br />
+    <%= f.text_field :companyname %>
+  </div>
+  <div class="field">
+    <%= f.label :companyemail %><br />
+    <%= f.text_field :companyemail %>
+  </div>
+  <div class="field">
+    <%= f.label :companyphone %><br />
+    <%= f.text_field :companyphone %>
+  </div>
+  <div class="field">
+    <%= f.label :jobposttype %><br />
+    <%= f.text_field :jobposttype %>
+  </div>
+  <div class="field">
+    <%= f.label :freejobpost %><br />
+    <%= f.check_box :freejobpost %>
+  </div>
+  <div class="field">
+    <%= f.label :cvemailoption %><br />
+    <%= f.check_box :cvemailoption %>
+  </div>
+  <div class="field">
+    <%= f.label :postemailack %><br />
+    <%= f.check_box :postemailack %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

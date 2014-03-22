@@ -1,4 +1,10 @@
 Lankajp::Application.routes.draw do
+  resources :jobs
+
+
+  resources :job_posts
+
+
   devise_for :users
 
   get "home/index"
