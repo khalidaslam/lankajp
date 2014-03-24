@@ -1,11 +1,10 @@
 Lankajp::Application.routes.draw do
+  
   resources :jobs do
     resources :job_applications
   end
 
   resources :jobs
-
-
   resources :job_posts
 
 

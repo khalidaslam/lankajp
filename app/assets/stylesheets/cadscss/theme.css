@@ -215,7 +215,7 @@ a.navbar-brand small {
   line-height: 20px;
   font-weight: 100;
   text-transform: none;
-  font-family: "Pacifico", Monaco, Consolas, monospace;
+  font-family: "helvitica", Monaco, Consolas, monospace;
 }
 a.navbar-brand:hover {
   text-decoration: none;
@@ -626,7 +626,7 @@ p.muted {
   width: 400px;
 }
 .topbar {
-  border: 3px solid #D2160A;
+  border: 3px solid #34495e;
 }
 .post-ad-btn {
   padding: 2px 10px;

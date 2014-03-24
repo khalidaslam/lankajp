@@ -1,83 +1,68 @@
 class JobPostsController < ApplicationController
-  # GET /job_posts
-  # GET /job_posts.json
-  def index
-    @job_posts = JobPost.all
+  around_filter :catch_not_found
+  before_filter :admin_restrict!, :except => [:new, :create]
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @job_posts }
-    end
+
+  def index
+        @job_posts = JobPost.where(created_at: 60.days.ago..Time.now).order("created_at DESC").job_post_search(params[:adminquery]).page(params[:page]).per_page(10)
   end
 
-  # GET /job_posts/1
-  # GET /job_posts/1.json
+
+
   def show
     @job_post = JobPost.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @job_post }
-    end
   end
 
-  # GET /job_posts/new
-  # GET /job_posts/new.json
+
+
   def new
     @job_post = JobPost.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @job_post }
-    end
   end
 
-  # GET /job_posts/1/edit
+
+
   def edit
     @job_post = JobPost.find(params[:id])
   end
 
-  # POST /job_posts
-  # POST /job_posts.json
+
+
   def create
     @job_post = JobPost.new(params[:job_post])
-
-    respond_to do |format|
-      if @job_post.save
-        format.html { redirect_to @job_post, notice: 'Job post was successfully created.' }
-        format.json { render json: @job_post, status: :created, location: @job_post }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @job_post.errors, status: :unprocessable_entity }
-      end
-    end
+    @job_post.jobuuid = SecureRandom.hex(7)
+    if @job_post.save
+      # Handle a successful save.
+      # Email to JobPoster
+      JobMailer.jobposting_acknowledgment(@job_post).deliver
+      # Email to Admin
+      JobMailer.jobposting_adminnotification(@job_post).deliver
+      flash[:notice] = "Job Posting Received - Payment Instructions have been sent at your email address"
+      redirect_to root_path
+    else
+      render 'new'
+    end 
   end
 
-  # PUT /job_posts/1
-  # PUT /job_posts/1.json
+
+
   def update
-    @job_post = JobPost.find(params[:id])
-
-    respond_to do |format|
+      @job_post = JobPost.find(params[:id])
       if @job_post.update_attributes(params[:job_post])
-        format.html { redirect_to @job_post, notice: 'Job post was successfully updated.' }
-        format.json { head :no_content }
+        flash[:notice] = "Job post was successfully updated."
+        redirect_to @job_post
       else
-        format.html { render action: "edit" }
-        format.json { render json: @job_post.errors, status: :unprocessable_entity }
+        render 'edit'
       end
-    end
   end
 
-  # DELETE /job_posts/1
-  # DELETE /job_posts/1.json
+
+
   def destroy
     @job_post = JobPost.find(params[:id])
     @job_post.destroy
-
-    respond_to do |format|
-      format.html { redirect_to job_posts_url }
-      format.json { head :no_content }
-    end
+    redirect_to job_posts_path
   end
+
+
+  
 end
