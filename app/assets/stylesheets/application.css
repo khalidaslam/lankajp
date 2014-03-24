@@ -9,4 +9,10 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require cadscss/bootstrap.css.erb
+ *= require cadscss/theme.css
+ *= require cadscss/dropzone.css.erb
+ *= require cadscss/font-awesome.css.erb
+ *= require cadscss/jquery.fancybox8cbb.css.erb
+ *= require cadscss/jquery.fancybox-buttons8cbb.css.erb
  */

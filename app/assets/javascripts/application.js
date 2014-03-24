@@ -12,3 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require cadsjs/bootstrap.js
+//= require cadsjs/jquery.flot.js
+//= require cadsjs/dropzone.js
+//= require cadsjs/jquery.fancybox8cbb.js
+//= require cadsjs/jquery.fancybox-buttons8cbb.js
+//= require cadsjs/jquery.fancybox-media8cbb.js
+//= require cadsjs/global.js
