@@ -16,6 +16,7 @@
                                                     <span class="input-group-addon input-group-addon-text hidden-xs">Find me a</span>
 
                                                     <%= text_field_tag :query, params[:query], :class=> "form-control col-sm-3", :placeholder => 'Let us find you a better job', :autocomplete => :off %>
+                                                    <%= params[:tags] %>
                                                     <div class=" input-group-addon hidden-xs">
                                                         <div class="btn-group" >
                                                             <button type="button" class="btn  dropdown-toggle" data-toggle="dropdown">
@@ -59,6 +60,251 @@
                 </div>
             </div>
 
+
+
+
+
+<div class="container">
+
+    <br />
+    <div class="row">
+        <div class="col-sm-12">
+            <ol class="breadcrumb">
+                <li class="active"><%= @jobs.count %> Jobs found <strong><%=params[:query]%> <%=params[:tags]%></strong> in London</li>
+            </ol>
+        </div>
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-sm-4  hidden-xs">
+            <div class="sidebar ">      
+        
+    
+
+    <div class="row ">
+
+
+        <div class="col-sm-11">
+
+            <div class="panel panel-default">
+                <div class="panel-heading">Filters</div>
+                <div class="panel-body">
+                    <form class="form-inline mini" style="margin-bottom: 0px;">
+                        <fieldset>              
+
+                            <div class="row filter-row">
+                                <div class="col-sm-6">
+                                    <label>Age</label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <select class="col-sm-10 form-control ">
+                                        <option>Any</option>
+                                        <option>Alfa romeo</option>
+                                        <option>Houses</option>
+                                        <option>Flats/ Apartments</option>
+                                        <option>Bungalows</option>
+                                        <option>Land</option>
+                                        <option>Commercial property</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row filter-row">    
+
+                                <div class="col-sm-2 pull-right" style="margin-top: 10px;">
+                                    <button class="btn btn-primary pull-right" type="submit">Update results</button>
+
+                                </div>
+                            </div>                      
+
+
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <div class="row ">
+        <div class="col-sm-11">
+            <div class="panel panel-default">
+                <div class="panel-heading">Refine category</div>
+                <div class="panel-body">
+                    <ul class="nav nav-category">
+                        <li>
+                            <a class="active" href="category.html">All categories</a>
+                            <ul>
+                                <li><a href="listings.html">Cars, Vans & Motorbikes</a>
+                                <ul>
+                                    <li><a class="active" href="listings.html">Cars</a>
+                                        <ul>
+                                            <li><a class="active" href="listings.html"><strong>Porsche</strong></a> (66)<a href="#" class="remove-category"><i class="fa fa-times"></i></a></li>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                                    </li>
+                            </ul>
+                        </li>
+                    </ul>               
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row ">
+        <div class="col-sm-11">
+            <div class="panel panel-default">
+                <div class="panel-heading">Refine category</div>
+                <div class="panel-body">
+
+                    <div class="property">
+                        <a href="#AC+Cobra">AC Cobra</a>
+                    </div>
+                             
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row ">
+        <div class="col-sm-11">
+            <div class="panel panel-default">
+                <div class="panel-heading">Location</div>
+                <div class="panel-body">
+                    <ul class="nav">
+                        <li>
+                            <a class="active" href="category.html">Greater London (12)</a>
+                            <ul>
+                                <li><a href="listings.html"> - Central London (11)</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="category.html">Brighton (5)</a></li>
+                    </ul>                   
+
+                </div>
+            </div>
+        </div>
+    </div>  
+
+
+
+
+
+</div>        </div>
+
+        <div class="col-sm-8 pull-right listings">
+
+
+
+
+            <div class="row listing-row" style="margin-top: -10px;">
+                <div class="pull-left">
+                    <strong>Today, Saturday 14th September</strong>
+                </div>
+                <div class="pull-right">
+                    <strong><%= @jobs.count %> Jobs</strong>
+                </div>
+            </div>
+
+            <div class="row listing-row">
+                <div class="col-sm-2">
+                    <a href="details.html" class="thumbnail property_sold"  style="position:relative;"><img alt="176 * 120" src="<%= asset_path 'cadsimg/listings/2.jpg' %>"></a>
+                </div>
+
+                <div class="col-sm-10">
+                    <h3><a class=""  href="details.html"><strong>Engineer Needed </strong> - Mazhar Pvt Ltd</a></h3>
+                    <p class="muted">Located in <strong>Colombo</strong>||Posted Feb 05, 2014</p>
+                    <p>
+                        <span class="classified_links pull-right">
+                            <a class="link-info underline" href="#">Share</a>&nbsp;
+                            <a class="link-info underline" href="#">Add to favorites</a>
+                    </p>
+                </div>
+            </div>
+
+            
+            <div >
+                <ul class="pagination pull-right">
+                    <li><a href="#">Prev</a></li>
+                    <li class="active">
+                        <a href="#">1</a>
+                    </li>
+                    <li ><a href="#">2</a></li>
+                    <li ><a href="#">3</a></li>
+                    <li ><a href="#">4</a></li>
+                    <li ><a href="#">5</a></li>
+                    <li class="hidden-xs"><a href="#">6</a></li>
+                    <li class="hidden-xs"><a href="#">7</a></li>
+                    <li class="hidden-sm hidden-xs"><a href="#">8</a></li>
+                    <li class="hidden-sm hidden-xs"><a href="#">9</a></li>
+                    <li class="hidden-sm hidden-xs"><a href="#">10</a></li>
+                    <li><a href="#">Next</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+</div><!-- Modal -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%= link_to 'Link', request.parameters.merge({:tags => "usama"}) %><br />
+
+
+
+<%= will_paginate @jobs %>
 <h1>Listing jobs</h1>
 
 <table>
@@ -84,7 +330,7 @@
   <tr>
     <td><%= job.user_id %></td>
     <td><%= job.title %></td>
-    <td><%= job.jobuuid %></td>
+    <td><%= job.city.name %></td>
     <td><%= job.employerlinkcode %></td>
     <td><%= job.tags %></td>
     <td><%= job.companyname %></td>

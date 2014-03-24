@@ -11,7 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140322005449) do
+ActiveRecord::Schema.define(:version => 20140324124351) do
+
+  create_table "cities", :force => true do |t|
+    t.string   "name",       :default => "", :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+  end
 
   create_table "job_applications", :force => true do |t|
     t.integer  "job_id",     :default => 0,  :null => false
@@ -39,6 +45,7 @@ ActiveRecord::Schema.define(:version => 20140322005449) do
 
   create_table "jobs", :force => true do |t|
     t.integer  "user_id",          :default => 0,     :null => false
+    t.integer  "city_id",          :default => 0,     :null => false
     t.string   "title",            :default => "",    :null => false
     t.string   "jobuuid",          :default => "",    :null => false
     t.string   "employerlinkcode", :default => "",    :null => false

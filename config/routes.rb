@@ -1,5 +1,8 @@
 Lankajp::Application.routes.draw do
   
+  resources :cities
+
+
   resources :jobs do
     resources :job_applications
   end

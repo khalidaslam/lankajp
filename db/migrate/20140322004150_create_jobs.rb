@@ -3,6 +3,7 @@ class CreateJobs < ActiveRecord::Migration
     create_table :jobs do |t|
       
       t.integer :user_id, :null => false, :default => 0
+      t.integer :city_id, :null => false, :default => 0
       t.string :title, :null => false, :default => ""
       t.string :jobuuid, :null => false, :default => ""
       t.string :employerlinkcode, :null => false, :default => ""
