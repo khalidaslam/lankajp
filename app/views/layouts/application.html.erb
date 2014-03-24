@@ -24,23 +24,14 @@
 
 
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body class="">
+<body>
 
 <%= yield %>
 
-<script type="text/javascript">
 
-// DO NOT REMOVE : GLOBAL FUNCTIONS!
 
-	$(document).ready(function() {
-		
-		pageSetUp();
-	});
-
-</script>
-
+  <%= javascript_include_tag "application" %>
 </body>
 </html>

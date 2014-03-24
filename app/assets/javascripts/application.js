@@ -12,17 +12,3 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require sajs/jquery-ui-1.10.3.min.js
-//= require sajs/pace.min.js
-//= require sajs/bootstrap.min.js
-//= require sajs/SmartNotification.min.js
-//= require sajs/jarvis.widget.min.js
-//= require sajs/jquery.easy-pie-chart.min.js
-//= require sajs/jquery.sparkline.min.js
-//= require sajs/jquery.validate.min.js
-//= require sajs/jquery.maskedinput.min.js
-//= require sajs/select2.min.js
-//= require sajs/bootstrap-slider.min.js
-//= require sajs/jquery.mb.browser.min.js
-//= require sajs/fastclick.js
-//= require sajs/app.js
