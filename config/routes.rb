@@ -1,8 +1,5 @@
 Lankajp::Application.routes.draw do
   
-  resources :cities
-
-
   resources :jobs do
     resources :job_applications
   end
@@ -14,6 +11,7 @@ Lankajp::Application.routes.draw do
   devise_for :users
 
   get "home/index"
+  get "home/terms"
   root to: "home#index"
 
   # The priority is based upon order of creation:

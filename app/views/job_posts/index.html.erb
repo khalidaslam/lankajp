@@ -1,35 +1,243 @@
-<h1>Listing job_posts</h1>
+            <div class="jumbotron home-tron-search well ">
+                <div class="container">
+                    <%= form_tag job_posts_path, method: :get do %>
+                    <div class="row">
 
-<table>
-  <tr>
-    <th>Fullname</th>
-    <th>Email</th>
-    <th>Conactno</th>
-    <th>Jobuuid</th>
-    <th>Jobposttype</th>
-    <th>Terms</th>
-    <th>Cvemailoption</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+                        <div class="col-sm-12">
+                            <div class="home-tron-search-inner">
 
-<% @job_posts.each do |job_post| %>
-  <tr>
-    <td><%= job_post.fullname %></td>
-    <td><%= job_post.email %></td>
-    <td><%= job_post.conactno %></td>
-    <td><%= job_post.jobuuid %></td>
-    <td><%= job_post.jobposttype %></td>
-    <td><%= job_post.terms %></td>
-    <td><%= job_post.cvemailoption %></td>
-    <td><%= link_to 'Show', job_post %></td>
-    <td><%= link_to 'Edit', edit_job_post_path(job_post) %></td>
-    <td><%= link_to 'Destroy', job_post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+                                <div class="row">
 
-<br />
+                                    <div class="col-sm-8 col-xs-9" style="text-align: center">
+                                        <div class="row">
 
-<%= link_to 'New Job post', new_job_post_path %>
+                                            <div class="col-sm-12 col-sm-offset-1">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon input-group-addon-text hidden-xs">Find me a</span>
+
+                                                    <%= text_field_tag :adminquery, params[:adminquery], :class=> "form-control col-sm-3", :placeholder => 'Let us find you a better job', :autocomplete => :off %>
+                                                    <%= params[:tags] %>
+                                                    <div class=" input-group-addon hidden-xs">
+                                                        <div class="btn-group" >
+                                                            <button type="button" class="btn  dropdown-toggle" data-toggle="dropdown">
+                                                                All categories <span class="caret"></span>
+                                                            </button>
+                                                            <ul class="dropdown-menu" role="menu">
+                                                                <li><a href="#">Cars, Vans & Motorbikes</a></li>
+                                                                <li><a href="#">Community</a></li>
+                                                                <li><a href="#">Flats & Houses</a></li>
+                                                                <li><a href="#">For Sale</a></li>
+                                                                <li><a href="#">Jobs</a></li>
+                                                                <li><a href="#">Pets</a></li>
+                                                                <li><a href="#">Services</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-sm-4 col-xs-3" style="text-align: center">
+                                        <div class="row">
+                                            <div class="col-sm-11 pull-right">
+                                                <%= submit_tag :search, name: nil, :class=>"btn btn-primary search-btn" %>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <% end %>
+                </div>
+            </div>
+
+
+
+
+
+<div class="container">
+
+    <br />
+    <div class="row">
+        <div class="col-sm-12">
+            <ol class="breadcrumb">
+                <li class="active"><%= @job_posts.count %> Jobs found <strong><%=params[:query]%> <%=params[:adminquery]%></strong> in London</li>
+            </ol>
+        </div>
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-sm-4  hidden-xs">
+            <div class="sidebar ">      
+        
+    
+
+    <div class="row ">
+
+
+        <div class="col-sm-11">
+
+            <div class="panel panel-default">
+                <div class="panel-heading">Filters</div>
+                <div class="panel-body">
+                    <form class="form-inline mini" style="margin-bottom: 0px;">
+                        <fieldset>              
+
+                            <div class="row filter-row">
+                                <div class="col-sm-6">
+                                    <label>Age</label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <select class="col-sm-10 form-control ">
+                                        <option>Any</option>
+                                        <option>Alfa romeo</option>
+                                        <option>Houses</option>
+                                        <option>Flats/ Apartments</option>
+                                        <option>Bungalows</option>
+                                        <option>Land</option>
+                                        <option>Commercial property</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row filter-row">    
+
+                                <div class="col-sm-2 pull-right" style="margin-top: 10px;">
+                                    <button class="btn btn-primary pull-right" type="submit">Update results</button>
+
+                                </div>
+                            </div>                      
+
+
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <div class="row ">
+        <div class="col-sm-11">
+            <div class="panel panel-default">
+                <div class="panel-heading">Refine category</div>
+                <div class="panel-body">
+                    <ul class="nav nav-category">
+                        <li>
+                            <a class="active" href="category.html">All categories</a>
+                            <ul>
+                                <li><a href="listings.html">Cars, Vans & Motorbikes</a>
+                                <ul>
+                                    <li><a class="active" href="listings.html">Cars</a>
+                                        <ul>
+                                            <li><a class="active" href="listings.html"><strong>Porsche</strong></a> (66)<a href="#" class="remove-category"><i class="fa fa-times"></i></a></li>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                                    </li>
+                            </ul>
+                        </li>
+                    </ul>               
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row ">
+        <div class="col-sm-11">
+            <div class="panel panel-default">
+                <div class="panel-heading">Refine category</div>
+                <div class="panel-body">
+
+                    <div class="property">
+                        <a href="#AC+Cobra">AC Cobra</a>
+                    </div>
+                             
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row ">
+        <div class="col-sm-11">
+            <div class="panel panel-default">
+                <div class="panel-heading">Location</div>
+                <div class="panel-body">
+                    <ul class="nav">
+                        <li>
+                            <a class="active" href="category.html">Greater London (12)</a>
+                            <ul>
+                                <li><a href="listings.html"> - Central London (11)</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="category.html">Brighton (5)</a></li>
+                    </ul>                   
+
+                </div>
+            </div>
+        </div>
+    </div>  
+
+
+
+
+
+</div>        </div>
+
+        <div class="col-sm-8 pull-right listings">
+
+            <div class="row listing-row" style="margin-top: -10px;">
+                <div class="pull-left">
+                    <strong>Today, <%= Time.now.strftime("%d %B, %Y") %></strong>
+                </div>
+                <div class="pull-right">
+                    <strong><%= @job_posts.count %> Jobs</strong>
+                </div>
+            </div>
+
+            <div class="row listing-row">
+                
+                <% @job_posts.each do |job_post| %>
+                <div class="col-sm-12">
+                        <%= link_to job_post_path(job_post) do %>
+                        <h3><strong><%= job_post.fullname %></strong> <%end%> - <%= job_post.email%> - <%= job_post.jobuuid %>
+                        </h3>
+                        
+                        <p class="" style="color:#7f8c8d;">Contact No: <%= job_post.contactno %> || CVs at Email: <%= job_post.cvemailoption %> || Post Type: <%= job_post.job_post_type %> || <%= job_post.created_at.strftime("%d-%b-%Y") %></p>
+                        <p>
+                        <span class="classified_links pull-right">
+                            <a class="link-info underline" href="#">Share</a>&nbsp;
+                            <%= link_to 'Destroy', job_post, method: :delete,:class=>"link-info underline", :style=>"color:#c0392b;", data: { confirm: 'Are you sure?' } %>
+                    </p>
+                </div>
+                <% end %>
+
+            </div>
+
+            
+            <div class="pagination pull-right">
+                <%= will_paginate @jobs %>
+            </div>
+
+        </div><!-- col-sm-8 pull-right listings -->
+
+    </div>
+</div><!-- Modal -->
+

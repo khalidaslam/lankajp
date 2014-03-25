@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 	has_many :jobs
+	has_many :job_posts
+	
   # Include default devise modules. Others available are:
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

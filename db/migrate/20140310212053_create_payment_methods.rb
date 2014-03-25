@@ -1,6 +1,6 @@
-class CreateCities < ActiveRecord::Migration
+class CreatePaymentMethods < ActiveRecord::Migration
   def change
-    create_table :cities do |t|
+    create_table :payment_methods do |t|
       t.string :name, :null => false, :default => ""
 
       t.timestamps

@@ -2,4 +2,21 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      user:
+        firstname: "First name"
+        lastname: "Last name"
+        email: "Email address"
+        password: "Password"
+        mobile: "Mobile number"
+        landline: "Telephone number"
+        city: "City"
+      job_post:
+        fullname: "Full Name"
+        contactno: "Contact Number"
+        adimage: "Job Ad Image or File"
+        email: "Email Address"
+        terms: "Terms & Conditions"
+      resume:
+        profilephoto: "Profile Photo"

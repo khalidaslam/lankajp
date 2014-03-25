@@ -203,9 +203,6 @@
 
         <div class="col-sm-8 pull-right listings">
 
-
-
-
             <div class="row listing-row" style="margin-top: -10px;">
                 <div class="pull-left">
                     <strong>Today, Saturday 14th September</strong>
@@ -229,29 +226,15 @@
                             <a class="link-info underline" href="#">Add to favorites</a>
                     </p>
                 </div>
+
             </div>
 
             
-            <div >
-                <ul class="pagination pull-right">
-                    <li><a href="#">Prev</a></li>
-                    <li class="active">
-                        <a href="#">1</a>
-                    </li>
-                    <li ><a href="#">2</a></li>
-                    <li ><a href="#">3</a></li>
-                    <li ><a href="#">4</a></li>
-                    <li ><a href="#">5</a></li>
-                    <li class="hidden-xs"><a href="#">6</a></li>
-                    <li class="hidden-xs"><a href="#">7</a></li>
-                    <li class="hidden-sm hidden-xs"><a href="#">8</a></li>
-                    <li class="hidden-sm hidden-xs"><a href="#">9</a></li>
-                    <li class="hidden-sm hidden-xs"><a href="#">10</a></li>
-                    <li><a href="#">Next</a></li>
-                </ul>
+            <div class="pagination pull-right">
+                <%= will_paginate @jobs %>
             </div>
 
-        </div>
+        </div><!-- col-sm-8 pull-right listings -->
 
     </div>
 </div><!-- Modal -->
@@ -304,7 +287,7 @@
 
 
 
-<%= will_paginate @jobs %>
+
 <h1>Listing jobs</h1>
 
 <table>
@@ -317,7 +300,7 @@
     <th>Companyname</th>
     <th>Companyemail</th>
     <th>Companyphone</th>
-    <th>Jobposttype</th>
+    <th>Job_post_type</th>
     <th>Freejobpost</th>
     <th>Cvemailoption</th>
     <th>Postemailack</th>
@@ -336,7 +319,7 @@
     <td><%= job.companyname %></td>
     <td><%= job.companyemail %></td>
     <td><%= job.companyphone %></td>
-    <td><%= job.jobposttype %></td>
+    <td><%= job.job_post_type %></td>
     <td><%= job.freejobpost %></td>
     <td><%= job.cvemailoption %></td>
     <td><%= job.postemailack %></td>

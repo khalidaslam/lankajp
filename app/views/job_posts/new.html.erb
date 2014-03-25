@@ -1,5 +1,134 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3 hidden-xs">
+            <div class="sidebar-account">	
+
+                <div class="row hidden-xs">
+
+                    <div class="col-lg-12">
+                    		<div class="well">
+                        			<div class="row ">
+                                         <div class="col-lg-3">
+                        			         <img src="<%= asset_path 'cadsimg/icons/Crest.png' %>" width="45"/>
+                        				</div>
+                            			<div class="col-lg-9">
+                                            <h4 style="margin-top: 0">Free Job Post</h4>
+                            			     <p>For a limited time, Lankajobpost.com is offering free job advertisements. Each job stays online for 14 days. You can receive applicant's resume at your email address directly while keeping your email address private. You will also receive a secure link where you can view and download applicants resume if you don't wish to receive too many emails in your inbox.</p>
+                            			</div>
+                                    </div>
+                    		    </div>
+                    		</div>
+                    </div>
+                </div>
+        </div>
+
+        <div class="col-sm-9">
+        	<%= form_for(@job_post, :url => job_posts_path, :html => {:class => "form-vertical", :autocomplete => "off", :multipart => "true"}) do |f| %>
+
+				
+
+				  
+
+				  <% if @job_post.errors.any? %>
+				  <div class="alert alert-danger alert-dismissable">
+  					<button style="color:#2c3e50;" type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> 
+				    <div id="error_explanation">
+				      <% @job_post.errors.full_messages.each do |msg| %>
+				        <span style="color:#2c3e50;"><%= msg %></span><br />
+				      <% end %>
+				    </div>
+				    </div>
+				  <% end %>
+					
+                <div class="panel panel-default">
+                    <div class="panel-heading">Create Job Post</div>
+                    <div class="panel-body">
+
+
+                        <div class="row">  
+                            <div class="col-sm-12 "  >
+
+                                <div class="form-group">
+                                    <div class="row">
+
+                                        <div class="col-sm-12">
+                                        	<%= f.label :fullname, "Full Name: *" %>
+                                        	<%= f.text_field :fullname, :autofocus => true, :class => "form-control"%>
+                                        </div>
+                                        <div class="col-sm-12"><br />
+                                            <%= f.label :email, "Email Address: *" %>
+                                        	<%= f.text_field :email, :class => "form-control"%>
+                                        </div>
+
+                                        <div class="col-sm-12"><br />
+                                            <%= f.label :contactno, "Contact Number: *" %>
+                                        	<%= f.text_field :contactno, :class => "form-control"%>
+                                        </div>    
+
+                                        <div class="col-sm-12"><br />
+                                        	<label>Receive Resumes At Your Email Address:</label><br />    
+			                                    <%= f.check_box :cvemailoption %> Select if you wish to receive applicant's resume at my email address.
+			                            </div>
+
+                                    </div>
+                                </div>
+
+                            </div>			
+                        </div>			
+                    </div>			
+                </div>
+
+
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Upload Image File</div>
+                    <div class="panel-body">
+
+
+                        <div class="row">  
+                            <div class="col-sm-12 "  >
+
+                                <div class="form-group">
+                                    <div class="row">
+
+                                        <div class="col-sm-12"><br />
+                                        	<%= f.label :adimage, "Upoad Job Ad Image File" %>
+                                        	<%= f.file_field :adimage %>
+                                        </div>
+                                        <small>&nbsp;&nbsp;&nbsp;&nbsp;* supported file type: Jpg/Jpeg/bmp/png/gif  OR  doc/docx/pdf | max file size: 512KB
+												</small>
+                                    </div>
+                                </div>
+
+                            </div>			
+                        </div>			
+                    </div>			
+                </div>
+
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Complete ad</div>
+                        <div class="panel-body">
+
+                            <div class="checkbox">
+                                <label>
+                                    <%= f.check_box :terms %> I agree to the terms and conditions and regulations.
+                                </label>
+                            </div>
+
+                            <br />
+                            <%= f.submit "Send Job Post", :class => "btn btn-primary pull-right" %>
+                            <p class="" style="text-align: left"><small>* Job Post approval subject to terms and conditions</small></p>
+                        </div>
+                    </div>
+                </div>
+            <% end %> <!--End form--> 
+        </div>
+
+    </div><!-- First Row End -->
+</div><!-- Container End-->
+
 <h1>New job_post</h1>
 
-<%= render 'form' %>
 
 <%= link_to 'Back', job_posts_path %>
