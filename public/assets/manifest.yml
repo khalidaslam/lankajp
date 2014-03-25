@@ -39,6 +39,8 @@ cadsimg/fancybox_sprite.png: cadsimg/fancybox_sprite-6db739144c51af76aea8960fc35
 cadsimg/fancybox_sprite/index.png: cadsimg/fancybox_sprite-6db739144c51af76aea8960fc35dbda7.png
 cadsimg/fancybox_sprite@2x.png: cadsimg/fancybox_sprite@2x-d9bfb0ab4609b8c34067c1371d35435c.png
 cadsimg/fancybox_sprite@2x/index.png: cadsimg/fancybox_sprite@2x-d9bfb0ab4609b8c34067c1371d35435c.png
+cadsimg/favicon.ico: cadsimg/favicon-4c9faa585b3f6034d51d06126c2b93ce.ico
+cadsimg/favicon/index.ico: cadsimg/favicon-4c9faa585b3f6034d51d06126c2b93ce.ico
 cadsimg/icons/Crest.png: cadsimg/icons/Crest-8e0485e5487d2d4578cb11e54ede436d.png
 cadsimg/icons/Crest/index.png: cadsimg/icons/Crest-8e0485e5487d2d4578cb11e54ede436d.png
 cadsimg/icons/Pie-Chart.png: cadsimg/icons/Pie-Chart-2e061b711518c04fc475bb820dcaa890.png
