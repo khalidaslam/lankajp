@@ -1,75 +1,43 @@
 <hr class="topbar"/>
+<br /><br />
+
 
 <div class="container well">
+<% if flash[:notice] %>
+<div style="text-align:center;">
+<button class="btn btn-primary btn-sm" onclick="closeWin()">Job Application Sent &nbsp;&nbsp;&nbsp; Click to Close </button>
+</div>
+<% end %>       
+<script>
+var myWindow;
+
+function closeWin()
+{
+window.close();
+}
+</script>
     <div class="row">
           <div class="col-md-12">
-            <img style="text-align:center;  margin: 0 auto;" src="<%= asset_path 'software219.jpg' %>" class="img-responsive">
+
+            <br />
+            <h2 style="text-align:center; text-decoration:underline;"><%= @job.title.upcase %></h2>
+            <%= image_tag(@job.adimage.url(:original), :style => "text-align:center;  margin: 0 auto;", :class => "img-responsive", :alt => "") %>
+            <br /><br />
+
+            <div style="text-align:center;">
+            <%= link_to "Apply for this Job", new_job_job_application_path(@job), :class => "btn btn-primary", :target => '_blank' %><br /><br />
+              <small><b>* Please make sure to read job selection criteria first and only apply for job if you geniunely meet selection criteria.</b></small>
+             
+
+              <% if user_signed_in? && current_user.isadmin == true %>
+               </br>
+              <small><b>See Application on this job at <%=root_url%>employer/link?utf8=✓&linkcode=<%=@job.employerlinkcode %> </b></small>
+              <% end %>
+            </div>
+
+
           </div>
     </div>
+
 </div>
 
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>User:</b>
-  <%= @job.user_id %>
-</p>
-
-<p>
-  <b>Title:</b>
-  <%= @job.title %>
-</p>
-
-<p>
-  <b>Jobuuid:</b>
-  <%= @job.jobuuid %>
-</p>
-
-<p>
-  <b>Employerlinkcode:</b>
-  <%= @job.employerlinkcode %>
-</p>
-
-<p>
-  <b>Tags:</b>
-  <%= @job.tags %>
-</p>
-
-<p>
-  <b>Companyname:</b>
-  <%= @job.companyname %>
-</p>
-
-<p>
-  <b>Companyemail:</b>
-  <%= @job.companyemail %>
-</p>
-
-<p>
-  <b>Companyphone:</b>
-  <%= @job.companyphone %>
-</p>
-
-<p>
-  <b>Jobposttype:</b>
-  <%= @job.job_post_type %>
-</p>
-
-<p>
-  <b>Freejobpost:</b>
-  <%= @job.freejobpost %>
-</p>
-
-<p>
-  <b>Cvemailoption:</b>
-  <%= @job.cvemailoption %>
-</p>
-
-<p>
-  <b>Postemailack:</b>
-  <%= @job.postemailack %>
-</p>
-
-
-<%= link_to 'Edit', edit_job_path(@job) %> |
-<%= link_to 'Back', jobs_path %>

@@ -2,8 +2,7 @@ class JobPost < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :job_post_type
 
-  attr_accessible :contactno, :cvemailoption, :email, :fullname, :job_post_type, :jobuuid, :terms,
-  :user_id, :adimage
+  attr_accessible :contactno, :cvemailoption, :email, :fullname, :job_post_type, :jobuuid, :terms, :adimage
 
   include PgSearch
 	pg_search_scope :search, against: [:fullname, :email, :jobuuid],

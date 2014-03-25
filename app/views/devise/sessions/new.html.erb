@@ -1,17 +1,125 @@
-<h2>Sign in</h2>
+<hr class="topbar"/>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
+<div class="container">
+    <br />
+    <div class="row">
 
-  <div><%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
+        <div class="col-sm-12">
+            <h1>Sign In</h1>
 
-  <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-  <% end -%>
+            <hr />
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
 
-  <div><%= f.submit "Sign in" %></div>
-<% end %>
+                    <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:class => "form-vertical", :autocomplete => "off", :multipart => "true"}) do |f| %>
+                    		<%= devise_error_messages! %>
 
-<%= render "devise/shared/links" %>
+                    		<% if flash[:alert] %>
+								<div class="alert alert-danger alert-dismissable">
+									<button style="color:#2c3e50;" type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> 
+									<div id="error_explanation">
+									<span style="color:#2c3e50;"><%= flash[:alert] %></span><br />
+									
+									</div>
+								</div>
+							<% end %>
+                            <div class="row">  
+                                <div class="col-sm-12" >
+
+                                    <div class="well">
+		                                <div class="form-group">
+		                                    <div class="row">
+
+		                                        <div class="col-sm-12">
+		                                        	<%= f.label :email, "Email Address: *" %>
+		                                        	<%= f.text_field :email, :autofocus => true, :class => "form-control"%>
+		                                        </div>
+		                                        <div class="col-sm-12"><br />
+		                                            <%= f.label :password, "Password: *" %>
+		                                        	<%= f.password_field :password, :class => "form-control"%>
+		                                        </div>
+
+		                                        <div class="col-sm-12"><br />
+													<% if devise_mapping.rememberable? -%>
+													<div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+													<% end -%>
+		                                        </div>    
+
+		                  						<div class="col-sm-12"><br />
+		                  							
+					                           		<%= f.submit "Sign In", :class => "btn btn-primary pull-right" %>
+		                  						</div>	<br /><br /><br />
+
+		                  						<div class="col-sm-12">
+		                  						<%= render "devise/shared/links" %>
+		                  						</div>
+
+		                                    </div>
+		                                </div>
+
+                                    </div>
+
+                                </div>
+              			    </div>
+                    <% end %>
+                </div>
+
+                        <div class="col-md-6 col-sm-12 account-sidebar">
+
+                            <div class="row">
+                                <div class="col-sm-3" style="text-align: center;">
+                                    <img src="<%= asset_path 'cadsimg/icons/Crest.png' %>" width="50"/>
+                                </div>
+                                <div class="col-sm-8">
+                                    <h3>Why us?</h3>
+                                    <p>We're simple fast and effective. That's why we are having hundreds of jobseekers visiting our site<p>
+                                    </div>
+                            </div>
+                            <br />
+
+                            <div class="row">
+                                <div class="col-sm-3" style="text-align: center;">
+                                    <img src="<%= asset_path 'cadsimg/icons/Pie-Chart.png' %>" width="40"/>
+                                </div>
+                                <div class="col-sm-8">
+                                    <h3>Magnet for buyers</h3>
+                                    <p>We make sure your listings receive maximum exposure and is presented in an engaging way</p>
+                                </div>
+                            </div>
+                            <br />
+
+                            <div class="row">
+                                <div class="col-sm-3" style="text-align: center;">
+                                    <img src="<%= asset_path 'cadsimg/icons/Search.png' %>" width="40"/>
+                                </div>
+                                <div class="col-sm-8">
+                                    <h3>Focused searches</h3>
+                                    <p>Our technology and algorithm matches potential jobseekers directly to your job listings</p>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <div class="col-sm-3" style="text-align: center;">
+                                    <img src="<%= asset_path 'cadsimg/icons/Telephone.png' %>" width="40"/>
+                                </div>
+                                <div class="col-sm-8">
+                                    <h3>Mobile web</h3>
+                                    <p>Your listings will always be accessible to everyone, even when they are on the move, via our responsive mobile website</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <br />
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+</div>
+</div><!-- Modal -->

@@ -1,11 +1,31 @@
 <hr class="topbar"/>       
 
+<% if flash[:alert] %>
+    <div class="alert alert-danger alert-dismissable">
+        <button style="color:#2c3e50;" type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> 
+        <div id="error_explanation">
+        <span style="color:#2c3e50;"><%= flash[:alert] %></span><br />
+        
+        </div>
+    </div>
+<% end %>
+
+<% if flash[:notice] %>
+    <div class="alert alert-notice alert-dismissable">
+        <button style="color:#2c3e50;" type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> 
+        <div id="error_explanation">
+        <span style="color:#2c3e50;"><%= flash[:notice] %></span><br />
+        
+        </div>
+    </div>
+<% end %>
+
 <div class="jumbotron home-search" style="">
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
                 <br />
-                <p class="main_description">Search thousands of stores, brands, products and user classifieds all in one place</p>
+                <p class="main_description">LANKAJOBPOST - LET US FIND YOU A BETTER JOB EVERYDAY</p>
 
                 <br /><br />
                 <%= form_tag jobs_path, method: :get do %>
@@ -16,30 +36,11 @@
 
                             <div class="col-sm-10 col-sm-offset-1">
                                 <div class="input-group">
-                                    <span class="input-group-addon input-group-addon-text">Find me a</span>
-                                    <%= text_field_tag :query, params[:query], :class=> "form-control col-sm-3", :placeholder => 'Let us find you a better job', :autocomplete => :off %>
-                                    <%= hidden_field_tag :tags, params[:tags], :class=> "form-control col-sm-3", :placeholder => 'Let us find you a better job', :autocomplete => :off %>
-                                    <div class=" input-group-addon hidden-xs">
-                                        <div class="btn-group" >
-                                            <button type="button" class="btn  dropdown-toggle" data-toggle="dropdown">
-                                                All categories <span class="caret"></span>
-                                            </button>
-                                            <ul class="dropdown-menu" role="menu">
-                                                <li><a href="#">Cars, Vans & Motorbikes</a></li>
-                                                <li><a href="#">Community</a></li>
-                                                <li><a href="#">Flats & Houses</a></li>
-                                                <li><a href="#">For Sale</a></li>
-                                                <li><a href="#">Jobs</a></li>
-                                                <li><a href="#">Pets</a></li>
-                                                <li><a href="#">Services</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
+                                    <span class="input-group-addon input-group-addon-text"></span>
+                                    <%= text_field_tag :query, params[:query], :class=> "form-control col-sm-3", :placeholder => 'e.g.  Desktop Support Colombo ...', :autocomplete => :off %>
                                 </div>
 
                             </div>
-
 
                         </div>
                     </div>
@@ -59,7 +60,7 @@
 
                         <div id="quotes">
                             <% @jobs.each do |j| %>
-                            <div class="text-item" style="display: none;">Boom! <strong><%=j.companyname%></strong> posted a job <strong><%=j.title%></strong> in <strong>Sheffield</strong></div>
+                            <div class="text-item" style="display: none;"><strong><%=j.companyname%></strong> posted a job <strong>"<%=j.title%>"</strong> in <strong><%= j.city.name%></strong></div>
                             <% end %>
                         </div>
 
@@ -82,11 +83,12 @@
                 <% jobs.each do |job| %>
                     <div class="col-sm-3">
                         <%= link_to job_path(job) do %>
-                        <span style="font-size:14px; color:#776475;"><b><%= job.title %></b></span>
+                        <span style="font-size:14px; color:#2c3e50;"><%= job.title %></span>
                         <% end %>
                         <br />
                         <p style="color:#2c3e50;"><%= job.companyname %></p>
-                        <hr style="margin-bottom: 5px; margin-top: 10px;">
+                        <hr style="margin-bottom: 5px; margin-top: 10px; border-color:#bdc3c7; 
+                            border-style:dashed;">
                     </div>
                 <% end %>
             </div>
@@ -96,7 +98,7 @@
 
 
 
-
+<% if false %>
     <div class="row">
 
         <div class="col-sm-12 col-md-8">
@@ -683,5 +685,5 @@
 
         </div>
     </div>				
-
+<% end %>
 </div><!-- /.container -->

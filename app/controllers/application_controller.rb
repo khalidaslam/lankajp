@@ -15,7 +15,7 @@ protected
   end
 
   def admin_restrict!
-    if user_signed_in? && current_user.isadmin
+    unless user_signed_in? && current_user.isadmin
     redirect_to root_url, :flash => { :notice => 'Resource Not Found.' }
     end
   end

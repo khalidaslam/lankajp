@@ -169,32 +169,3 @@ PaymentMethod.create([
 {:name => 'Credit Card'},
 {:name => 'Free Job Post'},
 ])
-
-
-
-Job.create([{:title => "Engineer", :tags => "Singh Baluchistan", :companyemail => "Usama", :city_id => 2},
-	{:title => "Engineer", :tags => "Singh Baluchistan", :companyemail => "Usama", :city_id => 2},
-	{:title => "Pharmacist", :tags => "Singh Khyber", :companyemail => "Huwa", :city_id => 4},
-	{:title => "Worker", :tags => "Punjab", :companyemail => "Newlook", :city_id => 5},
-	{:title => "Designer", :tags => "web photoshop", :companyemail => "Usama", :city_id => 3},
-	{:title => "Engineer", :tags => "Singh Baluchistan", :companyemail => "adobe", :city_id => 4},
-	{:title => "Styler", :tags => "colombo", :companyemail => "ntobe", :city_id => 5},
-	{:title => "phonegap", :tags => "mardan", :companyemail => "adobe", :city_id => 6},
-	{:title => "Dreamweaver designer", :tags => "karachi", :companyemail => "microsoft", :city_id => 7},
-	{:title => "Engineer", :tags => "Singh Baluchistan", :companyemail => "Achara", :city_id => 8},
-	{:title => "Engineer", :tags => "Singh Baluchistan", :companyemail => "Pakistan", :city_id => 9},
-	{:title => "Engineer", :tags => "Singh", :companyemail => "Hyderabad", :city_id => 11},
-	{:title => "Engineer", :tags => "Baluchistan", :companyemail => "Usama", :city_id => 9},
-	{:title => "Engineer", :tags => "Peshawar", :companyemail => "Usama", :city_id => 14},
-	{:title => "Engineer", :tags => "Sarhad", :companyemail => "Usama", :city_id => 10},
-	{:title => "Engineer", :tags => "Singh Baluchistan", :companyemail => "Usama", :city_id => 9},
-	{:title => "Engineer", :tags => "Singh Baluchistan", :companyemail => "Usama", :city_id => 3},
-	{:title => "Engineer", :tags => "Singh Baluchistan", :companyemail => "Usama", :city_id => 4},
-	{:title => "Engineer", :tags => "Singh Baluchistan", :companyemail => "Usama", :city_id => 4},
-	{:title => "Engineer", :tags => "Singh Baluchistan", :companyemail => "Usama", :city_id => 7},
-	{:title => "Engineer", :tags => "Singh Baluchistan", :companyemail => "Usama", :city_id => 7},
-	{:title => "Engineer", :tags => "Singh Baluchistan", :companyemail => "Usama", :city_id => 8},
-	{:title => "Engineer", :tags => "Singh Baluchistan", :companyemail => "Usama", :city_id => 10},
-	{:title => "Engineer", :tags => "Singh Baluchistan", :companyemail => "Usama", :city_id => 11},
-	{:title => "Engineer", :tags => "Singh Baluchistan", :companyemail => "Usama", :city_id => 17}
-	])

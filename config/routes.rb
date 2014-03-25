@@ -1,5 +1,6 @@
 Lankajp::Application.routes.draw do
-  
+  root to: "home#index"
+
   resources :jobs do
     resources :job_applications
   end
@@ -12,7 +13,8 @@ Lankajp::Application.routes.draw do
 
   get "home/index"
   get "home/terms"
-  root to: "home#index"
+  get "employer/link"
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -70,4 +72,5 @@ Lankajp::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
+  match '*a' => redirect { |p, req| req.flash[:alert] = "Oops, No resource found at lankajobpost.com/#{p[:a]}"; '/' }
 end

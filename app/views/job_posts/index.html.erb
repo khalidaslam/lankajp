@@ -211,25 +211,25 @@
                     <strong><%= @job_posts.count %> Jobs</strong>
                 </div>
             </div>
-
-            <div class="row listing-row">
-                
-                <% @job_posts.each do |job_post| %>
-                <div class="col-sm-12">
-                        <%= link_to job_post_path(job_post) do %>
-                        <h3><strong><%= job_post.fullname %></strong> <%end%> - <%= job_post.email%> - <%= job_post.jobuuid %>
-                        </h3>
-                        
-                        <p class="" style="color:#7f8c8d;">Contact No: <%= job_post.contactno %> || CVs at Email: <%= job_post.cvemailoption %> || Post Type: <%= job_post.job_post_type %> || <%= job_post.created_at.strftime("%d-%b-%Y") %></p>
-                        <p>
-                        <span class="classified_links pull-right">
-                            <a class="link-info underline" href="#">Share</a>&nbsp;
-                            <%= link_to 'Destroy', job_post, method: :delete,:class=>"link-info underline", :style=>"color:#c0392b;", data: { confirm: 'Are you sure?' } %>
-                    </p>
+             <% @job_posts.each do |job_post| %>
+                <div class="row listing-row">
+                    
+                    <div class="col-sm-12">
+                            <%= link_to job_post_path(job_post) do %>
+                            <h3><strong><%= job_post.fullname %></strong> <%end%> - <%= job_post.email%> - <%= job_post.jobuuid %> - User ID: <%= job_post.user_id %>
+                            </h3>
+                            
+                            <p class="" style="color:#7f8c8d;">Contact No: <%= job_post.contactno %> || CVs at Email: <%= job_post.cvemailoption %> || Post Type: <%= job_post.job_post_type %> || <%= job_post.created_at.strftime("%d-%b-%Y") %></p>
+                            <p>
+                            <span class="classified_links pull-right">
+                                <%= link_to 'Destroy Post', job_post, method: :delete,:class=>"link-info underline", :style=>"color:#c0392b;", data: { confirm: 'Are you sure?' } %>&nbsp;
+                                <%= link_to 'File Uploaded', job_post.adimage.url , :class => "link-info underline" %>
+                            </span>
+                        </p>
+                    </div>
+                   
                 </div>
-                <% end %>
-
-            </div>
+             <% end %>
 
             
             <div class="pagination pull-right">

@@ -91,7 +91,7 @@ ActiveRecord::Schema.define(:version => 20140322005465) do
     t.integer  "user_id",                  :default => 0,     :null => false
     t.integer  "city_id",                  :default => 0,     :null => false
     t.integer  "classification_id",        :default => 0,     :null => false
-    t.integer  "workttype_id",             :default => 0,     :null => false
+    t.integer  "worktype_id",              :default => 0,     :null => false
     t.integer  "job_post_type_id",         :default => 0,     :null => false
     t.integer  "careerlevel_id",           :default => 0,     :null => false
     t.integer  "experiencelevel_id",       :default => 0,     :null => false
@@ -104,7 +104,6 @@ ActiveRecord::Schema.define(:version => 20140322005465) do
     t.string   "companyname",              :default => "",    :null => false
     t.string   "companyemail",             :default => "",    :null => false
     t.string   "companyphone",             :default => "",    :null => false
-    t.boolean  "freejobpost",              :default => false, :null => false
     t.boolean  "cvemailoption",            :default => false, :null => false
     t.boolean  "postemailack",             :default => false, :null => false
     t.datetime "created_at",                                  :null => false

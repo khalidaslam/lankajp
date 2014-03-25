@@ -15,8 +15,7 @@
                                                 <div class="input-group">
                                                     <span class="input-group-addon input-group-addon-text hidden-xs">Find me a</span>
 
-                                                    <%= text_field_tag :query, params[:query], :class=> "form-control col-sm-3", :placeholder => 'Let us find you a better job', :autocomplete => :off %>
-                                                    <%= params[:tags] %>
+                                                    <%= text_field_tag :query, params[:query], :class=> "form-control col-sm-3", :placeholder => 'Let us find you a better job', :autofocus => true, :autocomplete => :off %>
                                                     <div class=" input-group-addon hidden-xs">
                                                         <div class="btn-group" >
                                                             <button type="button" class="btn  dropdown-toggle" data-toggle="dropdown">
@@ -205,29 +204,36 @@
 
             <div class="row listing-row" style="margin-top: -10px;">
                 <div class="pull-left">
-                    <strong>Today, Saturday 14th September</strong>
+                    <strong>Today, <%= Time.now.strftime("%d %B, %Y") %></strong>
                 </div>
                 <div class="pull-right">
                     <strong><%= @jobs.count %> Jobs</strong>
                 </div>
             </div>
 
-            <div class="row listing-row">
-                <div class="col-sm-2">
-                    <a href="details.html" class="thumbnail property_sold"  style="position:relative;"><img alt="176 * 120" src="<%= asset_path 'cadsimg/listings/2.jpg' %>"></a>
-                </div>
+            <% @jobs.each do |job| %>
+                <div class="row listing-row">
+                    <% if false %>
+                    <div class="col-sm-2">
+                        <a href="details.html" class="thumbnail property_sold"  style="position:relative;"><img alt="176 * 120" src="css/images/listings/2.jpg"></a>
+                    </div>
+                    <% end %>
 
-                <div class="col-sm-10">
-                    <h3><a class=""  href="details.html"><strong>Engineer Needed </strong> - Mazhar Pvt Ltd</a></h3>
-                    <p class="muted">Located in <strong>Colombo</strong>||Posted Feb 05, 2014</p>
-                    <p>
-                        <span class="classified_links pull-right">
-                            <a class="link-info underline" href="#">Share</a>&nbsp;
-                            <a class="link-info underline" href="#">Add to favorites</a>
-                    </p>
+                    <div class="col-sm-12">
+                        <%= link_to job_path(job) do %>
+                        <h3><%= job.title %> <% end %><small>- Salary <%= job.salary.salaryrange %></small></h3>
+                        
+                        <p class="muted">Located in <strong><%= job.city.name %></strong> || Posted on <strong><%= job.created_at.strftime("%d %B, %Y") %></strong> || <strong><%= job.classification.name %></strong></p>
+                        
+                        
+                        <p>
+                            <span class="classified_links pull-right">
+                                <%= link_to "View Job Ad", job_path(job), :class => "link-info underline" , :style => "color:#3498db;"%>&nbsp;
+                            </span>
+                        </p>
+                    </div>
                 </div>
-
-            </div>
+            <% end %>
 
             
             <div class="pagination pull-right">
@@ -240,96 +246,3 @@
 </div><!-- Modal -->
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<%= link_to 'Link', request.parameters.merge({:tags => "usama"}) %><br />
-
-
-
-
-<h1>Listing jobs</h1>
-
-<table>
-  <tr>
-    <th>User</th>
-    <th>Title</th>
-    <th>Jobuuid</th>
-    <th>Employerlinkcode</th>
-    <th>Tags</th>
-    <th>Companyname</th>
-    <th>Companyemail</th>
-    <th>Companyphone</th>
-    <th>Job_post_type</th>
-    <th>Freejobpost</th>
-    <th>Cvemailoption</th>
-    <th>Postemailack</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @jobs.each do |job| %>
-  <tr>
-    <td><%= job.user_id %></td>
-    <td><%= job.title %></td>
-    <td><%= job.city.name %></td>
-    <td><%= job.employerlinkcode %></td>
-    <td><%= job.tags %></td>
-    <td><%= job.companyname %></td>
-    <td><%= job.companyemail %></td>
-    <td><%= job.companyphone %></td>
-    <td><%= job.job_post_type %></td>
-    <td><%= job.freejobpost %></td>
-    <td><%= job.cvemailoption %></td>
-    <td><%= job.postemailack %></td>
-    <td><%= link_to 'Show', job %></td>
-    <td><%= link_to 'Edit', edit_job_path(job) %></td>
-    <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Job', new_job_path %>

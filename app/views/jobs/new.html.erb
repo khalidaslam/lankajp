@@ -1,5 +1,255 @@
+<hr class="topbar"/>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3 hidden-xs">
+            <div class="sidebar-account">   
+
+	            <div class="row ">
+	        		<div class="col-lg-12">
+	        			<div class="panel panel-default">
+	        				<div class="panel-heading">My account</div>
+	        				<div class="panel-body">
+	        					<ul class="nav">
+	        						<li>
+	        							<a class="active" href="account_dashboard.html">Dashboard</a>
+	        						</li>						
+	        						<li>	
+	        							<a class="active" href="account_profile.html">My profile</a>
+	        						</li>
+	                                <li>
+	        							<a class="active" href="account_account.html">My account</a>
+	        						</li>
+	        						<li>
+	        							<a class="active" href="account_ads.html">Manage ads</a>
+	        						</li>
+	        						<li>
+	        							<a class="active" href="account_ad_create.html">Create new ad</a>
+	        						</li>
+	        					</ul>
+
+	        				</div>
+	        			</div>
+	        		</div>
+	        	</div>
+
+                <div class="row hidden-xs">
+
+                    <div class="col-lg-12">
+                            <div class="well">
+                                    <div class="row ">
+                                         <div class="col-lg-3">
+                                             <img src="<%= asset_path 'cadsimg/icons/Crest.png' %>" width="45"/>
+                                        </div>
+                                        <div class="col-lg-9">
+                                            <h4 style="margin-top: 0">Increase visibility</h4>
+                                             <p>Don't forget to 'bump' your listing to gain more visibility</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+        </div>
+
+        <div class="col-sm-9">
+            <%= form_for(@job, :html => {:class => "form-vertical", :autocomplete => "off", :multipart => "true"}) do |f| %>
+
+
+            	<% if @job.errors.any? %>
+				  <div class="alert alert-danger alert-dismissable">
+  					<button style="color:#2c3e50;" type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> 
+				    <div id="error_explanation">
+				      <% @job.errors.full_messages.each do |msg| %>
+				        <span style="color:#2c3e50;"><%= msg %></span><br />
+				      <% end %>
+				    </div>
+				    </div>
+				  <% end %>
+
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Create Job Post</div>
+                    <div class="panel-body">
+
+
+                        <div class="row">  
+                            <div class="col-sm-12 "  >
+
+                                <div class="form-group">
+                                    <div class="row">
+
+                                        <div class="col-sm-12">
+                                        	<%= f.label :title, "Job Title: *" %>
+                                        	<%= f.text_field :title, :autofocus => true, :class => "form-control"%>
+                                        </div>
+
+                                        <div class="col-sm-12"><br />
+                                            <%= f.label :user_id, "User ID: *" %>
+                                            <%= f.text_field :user_id, :autofocus => true, :class => "form-control"%>
+                                        </div>
+
+
+
+                                        <div class="col-sm-12"><br />
+                                        	<%= f.label :companyname, "Company Name: *" %>
+                                        	<%= f.text_field :companyname, :class => "form-control"%>
+                                        </div>
+
+
+
+                                        <div class="col-sm-12"><br />
+                                        	<%= f.label :companyemail, "Company Email: *" %>
+                                        	<%= f.text_field :companyemail, :class => "form-control"%>
+                                        </div>
+
+
+
+
+                                        <div class="col-sm-12"><br />
+                                        	<%= f.label :companyphone, "Company Contact No: *" %>
+                                        	<%= f.text_field :companyphone, :class => "form-control"%>
+                                        </div>
+
+
+
+
+                                        <div class="col-sm-12"><br />
+                                        	<%= f.label :jobuuid, "Assigned Job UUID: *" %>
+                                        	<%= f.text_field :jobuuid, :class => "form-control"%>
+                                        </div>
+
+
+
+
+                                        <div class="col-sm-12"><br />
+                                        	<%= f.label :tags, "Job Description: *" %>
+                                        	<%= f.text_area :tags, :class => "form-control col-sm-8 expand", :rows=>"6", :style => "width: 100%; resize: none;"%>
+                                        </div>
+
+
+                                        <div class="col-sm-12"><br />
+                                        	<%= f.label :classification_id, "Classification: *" %>
+                                        	<%= f.collection_select :classification_id, Classification.order('name ASC').all, :id, :name, {:include_blank => "Please select classification"}, {:class=>'form-control'} %>
+                                        </div>
+
+
+                                        <div class="col-sm-12"><br />
+                                        	<%= f.label :city_id, "City: *" %>
+                                        	<%= f.collection_select :city_id, City.order('name ASC').all, :id, :name, {:include_blank => "Please select city"}, {:class=>'form-control'} %>
+                                        </div>
+
+                                        <div class="col-sm-12"><br />
+                                        	<%= f.label :worktype_id, "Work Type: *" %>
+                                        	<%= f.collection_select :worktype_id, Worktype.order('name ASC').all, :id, :name, {:include_blank => "Please select work type"}, {:class=>'form-control'} %>
+                                        </div>
+
+
+                                        <div class="col-sm-12"><br />
+                                        	<%= f.label :salary_id, "Salary Range: *" %>
+                                        	<%= f.collection_select :salary_id, Salary.order('id ASC').all, :id, :salaryrange, {:include_blank => "Please select salary range"}, {:class=>'form-control'} %>
+                                        </div>
+
+
+
+                                        <div class="col-sm-12"><br />
+                                        	<%= f.label :careerlevel_id, "Career Level: *" %>
+                                        	<%= f.collection_select :careerlevel_id, Careerlevel.order('name ASC').all, :id, :name, {:include_blank => "Please select work type"}, {:class=>'form-control'} %>
+                                        </div>
+
+                                        <div class="col-sm-12"><br />
+                                        	<%= f.label :experiencelevel_id, "Experience Level: *" %>
+                                        	<%= f.collection_select :experiencelevel_id, Experiencelevel.order('id ASC').all, :id, :name, {:include_blank => "Please select experience level"}, {:class=>'form-control'} %>
+                                        </div>
+
+
+                                        <div class="col-sm-12"><br />
+                                        	<%= f.label :payment_method_id, "Payment Method: *" %>
+                                        	<%= f.collection_select :payment_method_id, PaymentMethod.order('name ASC').all, :id, :name, {:include_blank => "Please select payment method used"}, {:class=>'form-control'} %>
+                                        </div>
+
+
+
+                                        <div class="col-sm-12"><br />
+                                        	<%= f.label :job_post_type_id, "Job Post Type: *" %>
+                                        	<%= f.collection_select :job_post_type_id, JobPostType.order('jobtype ASC').all, :id, :jobtype, {:include_blank => "Please select job post type"}, {:class=>'form-control'} %>
+                                        </div>
+
+
+                                        <div class="col-sm-12"><br />
+                                        	<label>Resume At Your Email Feature: *</label><br />    
+			                                    <%= f.check_box :cvemailoption %> Select if you wish to receive applicant's resume at my email address.
+			                            </div>
+
+			                            <div class="col-sm-12"><br />
+                                        	<label>Send Job Post Acknowledgment: *</label><br />    
+			                                    <%= f.check_box :postemailack %> Select if you wish to receive applicant's resume at my email address.
+			                            </div>
+
+
+                                    </div>
+                                </div>
+
+                            </div>          
+                        </div>          
+                    </div>          
+                </div>
+
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Upload Image File</div>
+                    <div class="panel-body">
+
+
+                        <div class="row">  
+                            <div class="col-sm-12 "  >
+
+                                <div class="form-group">
+                                    <div class="row">
+
+                                        <div class="col-sm-12"><br />
+                                        	<%= f.label :adimage, "Upoad Job Ad Image File" %>
+                                        	<%= f.file_field :adimage %>
+                                        </div>
+                                        <small>&nbsp;&nbsp;&nbsp;&nbsp;* supported file type: Jpg/Jpeg/bmp/png/gif  OR  doc/docx/pdf | max file size: 512KB
+												</small>
+                                    </div>
+                                </div>
+
+                            </div>			
+                        </div>			
+                    </div>			
+                </div>
+
+
+
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Complete ad</div>
+                        <div class="panel-body">
+
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> All Done!!!.
+                                </label>
+                            </div>
+
+                            <br />
+                            <%= f.submit "Send Job Post", :class => "btn btn-primary pull-right" %>
+                            <p class="" style="text-align: left"><small>* Job Post approval subject to terms and conditions</small></p>
+                        </div>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+
+    </div><!-- First Row End -->
+</div><!-- Container End-->
+
+
+
 <h1>New job</h1>
 
-<%= render 'form' %>
 
 <%= link_to 'Back', jobs_path %>

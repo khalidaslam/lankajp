@@ -7,19 +7,19 @@ require 'open-uri'
   #
   #   en.job_mailer.jobposting_acknowledgment.subject
   #
-  def jobapplication_acknowledgment(jobapplication)
-    @jobapplication = jobapplication
-    @job = @jobapplication.job
+  def jobapplication_acknowledgment(job_application)
+    @job_application = job_application
+    @job = @job_application.job
     jobtitle = @job.title[0..20].gsub(/\s\w+\s*$/, '...')
     
         if Rails.env == 'production'
-          attachments[jobapplication.resume_file_name] = open("#{jobapplication.resume.url}").read 
+          attachments[job_application.resume_file_name] = open("#{job_application.resume.url}").read 
         else
-          attachments[jobapplication.resume_file_name] = open("#{jobapplication.resume.path}").read
+          attachments[job_application.resume_file_name] = open("#{job_application.resume.path}").read
         end    
 
         if @job.cvemailoption == true
-          mail from: @jobapplication.email, to: @job.companyemail, subject: "Mr #{@jobapplication.name} has applied for #{jobtitle} -- Courtesy of lankajobpost.com"
+          mail from: @job_application.email, to: @job.companyemail, subject: "Mr #{@job_application.fullname} has applied for #{jobtitle} -- Courtesy of lankajobpost.com"
         end
   end
 

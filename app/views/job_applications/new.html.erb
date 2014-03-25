@@ -1,5 +1,77 @@
-<h1>New job_application</h1>
+<hr class="topbar"/>
 
-<%= render 'form' %>
 
-<%= link_to 'Back', job_job_applications_path(@job_application.job) %>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Create Job Application</h2>
+            <hr />
+        </div>
+    </div>
+
+
+	<div class="row">
+	  <div class="col-md-8">
+	  		<div class="well">
+	  					
+	  			<%= form_for([@job_application.job, @job_application], :html => {:class => "form-vertical", :autocomplete => "off", :multipart => "true"}) do |f| %>
+							  <% if @job_application.errors.any? %>
+							  <div class="alert alert-danger alert-dismissable">
+			  					<button style="color:#2c3e50;" type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> 
+							    <div id="error_explanation">
+							      <% @job_application.errors.full_messages.each do |msg| %>
+							        <span style="color:#2c3e50;"><%= msg %></span><br />
+							      <% end %>
+							    </div>
+							    </div>
+							  <% end %>
+
+			            <div class="form-group" >
+			                <div class="row">
+
+			                    <div class="col-sm-12">
+			                    	<%= f.label :fullname, "Full Name: *" %>
+			                    	<%= f.text_field :fullname, :autofocus => true, :class => "form-control"%>
+			                    </div>
+			                    <div class="col-sm-12"><br />
+			                        <%= f.label :email, "Email Address: *" %>
+			                    	<%= f.text_field :email, :class => "form-control"%>
+			                    </div>
+
+			                    <div class="col-sm-12"><br />
+			                        <%= f.label :contactno, "Contact Number: *" %>
+			                    	<%= f.text_field :contactno, :class => "form-control"%>
+			                    </div>    
+<% if false %>
+			                    <div class="col-sm-12"><br />
+			                        <%= f.label :tags, "Resume Keywords: *" %>
+			                    	<%= f.text_field :contactno, :class => "form-control"%>
+			                    </div>  
+<% end %>
+			                    <div class="col-sm-12"><br />
+			                        <%= f.label :resume, "Upload Resume: *" %>
+			                    	<%= f.file_field :resume, :class => ""%>
+			                    </div>  
+			                    <small>&nbsp;&nbsp;&nbsp;&nbsp;* supported file type: doc/docx/pdf | max file size: 256KB
+								</small>
+								<br /><br />
+								<%= f.submit "Send Job Application", :class => "btn btn-primary pull-right" %> 
+			                </div>
+			            </div>
+
+			            <% end %>
+
+	  		</div>
+	  		
+	  </div>
+
+	  <div class="col-md-4">
+		  	<div class="well">
+		  		<p style="font-size:14px; text-align:center;"><b>Job Post</b></p>
+		  		<%= image_tag(@job.adimage.url(:small), :class=>"img-responsive", :style => "display:block; margin-left:auto; margin-right:auto", :alt => "") %>
+		  	</div>
+	  </div>
+	</div>
+ 
+</div><!-- End Container -->
+

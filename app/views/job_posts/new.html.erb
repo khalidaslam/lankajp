@@ -1,3 +1,5 @@
+<hr class="topbar"/>  
+
 <div class="container">
     <div class="row">
         <div class="col-sm-3 hidden-xs">
@@ -24,10 +26,6 @@
 
         <div class="col-sm-9">
         	<%= form_for(@job_post, :url => job_posts_path, :html => {:class => "form-vertical", :autocomplete => "off", :multipart => "true"}) do |f| %>
-
-				
-
-				  
 
 				  <% if @job_post.errors.any? %>
 				  <div class="alert alert-danger alert-dismissable">
@@ -127,8 +125,3 @@
 
     </div><!-- First Row End -->
 </div><!-- Container End-->
-
-<h1>New job_post</h1>
-
-
-<%= link_to 'Back', job_posts_path %>

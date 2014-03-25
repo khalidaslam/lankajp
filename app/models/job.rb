@@ -1,4 +1,9 @@
 class Job < ActiveRecord::Base
+    attr_accessible :companyemail, :companyname, :companyphone, :cvemailoption, :employerlinkcode,
+   :freejobpost, :jobuuid, :postemailack, :tags, :title,
+   :user_id, :city_id, :classification_id, :worktype_id, :careerlevel_id, :payment_method_id,
+   :salary_id, :job_post_type_id, :experiencelevel_id, :adimage
+   
   has_many :job_applications
   belongs_to :user
   belongs_to :city
@@ -10,10 +15,19 @@ class Job < ActiveRecord::Base
   belongs_to :job_post_type
   belongs_to :worktype
 
-  attr_accessible :companyemail, :companyname, :companyphone, :cvemailoption, :employerlinkcode,
-   :freejobpost, :job_post_type, :jobuuid, :postemailack, :tags, :title,
-   :user_id, :city_id, :classification_id, :worktype_id, :careerlevel_id, :payment_method_id,
-   :salary_id, :job_post_type_id, :experiencelevel_id
+
+
+  has_attached_file :adimage, :styles => { :small => "400>x"}, :default_url => "/images/:attachment/missinglogo.jpg"
+
+  validates :title, :companyname, :companyemail, :companyphone, :presence => { :message => "must be given" }
+
+  validates :city, :careerlevel, :experiencelevel, :classification, :payment_method,
+  :salary, :worktype, :job_post_type, :presence => { :message => "must be selected" }
+
+  validates_attachment :adimage, :size => { :in => 0..512.kilobytes, :message => "file size should be under 512kb" }
+  validates_attachment_content_type :adimage, 
+    :content_type => /^image\/(png|gif|jpeg)/,
+    :message => 'only (png/gif/jpeg) images'
 
   include PgSearch
 	pg_search_scope :search, against: [:title],

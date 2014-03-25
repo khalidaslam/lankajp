@@ -6,6 +6,7 @@ class CreateJobApplications < ActiveRecord::Migration
       t.integer :user_id, :null => false, :default => 0
       t.string :fullname, :null => false, :default => ""
       t.string :email, :null => false, :default => ""
+      t.text :tags, :null => false, :default => ""
       t.string :contactno, :null => false, :default => ""
 
       t.timestamps

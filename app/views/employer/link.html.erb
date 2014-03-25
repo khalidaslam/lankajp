@@ -1,0 +1,168 @@
+<hr class="topbar"/>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Employer Page</h2>
+            <hr />
+        </div>
+    </div>
+
+
+	<div class="row">
+	  <div class="col-md-8">
+	  		<div class="well">
+	  					<% if @job_applications.empty? %>
+							<h6 style= "text-align:center;">No Job Applications Yet</h>
+						<% end %>
+	  			<% @job_applications.each do |ja| %>
+		  		<div class="row listing-row listings">
+	                <div class="col-sm-12">
+	                	
+	                    <h3><strong><%=ja.fullname %></strong> - <%= ja.email %> </h3>
+	                    <p class="muted">Located in <strong>Colombo</strong> || Applied <%=ja.created_at.strftime("%d %B, %Y") %>
+	                    </p>
+	                    <p>
+	                		<span class="classified_links pull-right">
+							<%= link_to 'Download Resume', ja.resume.url , :class => "link-info underline" %>
+	                        </span>
+	                	</p>
+	                    
+	                </div>
+	            </div>
+	            <hr style="margin-bottom: 5px; margin-top: 10px; border-color:#bdc3c7; 
+                            border-style:dashed;">
+	            <% end %>
+	  		</div>
+	  		<div class="pagination pull-left">
+                <%= will_paginate @job_applications %>
+            </div>
+	  </div>
+
+	  <div class="col-md-4">
+		  	<div class="well">
+		  		<%= image_tag(@job.adimage.url(:small), :class=>"img-responsive", :style => "display:block; margin-left:auto; margin-right:auto", :alt => "") %>
+		  	</div>
+	  </div>
+	</div>
+ 
+</div><!-- End Container -->
+
+
+<% if false %>
+
+<% jobexpirydate = @job.created_at.advance(:days =>14) %>
+<% jobdays = (jobexpirydate.to_date - DateTime.now.to_date).to_i %>
+		<!-- MAIN -->
+		<div class="l-main">
+			<div class="l-main-h">
+				<div class="l-submain">
+					<div class="l-submain-h g-html">
+					
+						<!-- Table -->
+						<table class="g-table">
+							<thead>
+								<tr>
+									<th>Name / Email / Contact</th>
+									<th>Resume</th>
+								</tr>
+							</thead>
+							<tbody>
+								<% @jobapplications.each do |ja| %>
+								<tr>
+									<td><%= ja.name.capitalize %> / <%= ja.email.downcase %> / <%= ja.phone %>
+									</td>
+									<td><%= link_to ja.resume.url do %>
+											<% extension = File.extname("#{ja.resume.url(:default, timestamp: false)}") %>
+											<% if extension.downcase == ".pdf" %>
+												<img src="<%= asset_path 'pdficon.jpg' %>" />
+											<% elsif extension.downcase == ".doc" %>
+												<img src="<%= asset_path 'wordicon.jpg' %>" />
+											<% elsif extension.downcase == ".docx" %>
+												<img src="<%= asset_path 'wordicon.jpg' %>" />
+											<%end%>
+										<% end %>
+									</td>
+								</tr>
+								<% end %>
+							</tbody>
+						</table>
+						<% if @jobapplications.empty? %>
+							<h6 style= "text-align:center;">No Job Applications Yet</h>
+						<% end %>
+						<div style= "text-align:center;",class="w-blog-pagination">
+						<%= will_paginate @jobapplications %>
+						</div>
+					</div>
+				</div>
+
+				<div class="l-submain">
+					<div class="l-submain-h g-html">
+						<h4 style="text-align: center;">Job Post Detail</h4>
+						<div class="g-hr">
+							<span class="g-hr-h">
+								<i class="icon-chevron-down"></i>
+							</span>
+						</div>
+						<div class="g-cols">
+							<div class="one-half">
+								<div class="wpb_single_image">
+								<%= image_tag(@job.adimage.url(:small), :style => "display:block; margin-left:auto; margin-right:auto", :alt => "") %>
+								</div>
+							</div>
+							<div class="one-half">
+								<div class="l-content">
+							<div class="l-content-h">
+
+								<div class="w-blog imgpos_attop meta_all">
+									<div class="w-blog-h">
+										<div class="w-blog-list">
+										
+											<div class="w-blog-entry format-standard">
+												<div class="w-blog-entry-h">
+													<div class="w-blog-entry-body">
+														<div class="w-blog-entry-meta">
+															<div class="w-blog-entry-meta-date">
+																<i class="icon-calendar"></i>Posted: 
+																<span style="background-color:#27ae60; color:#ffffff; -moz-border-radius: 8px; border-radius: 8px;">&nbsp;&nbsp;
+																<span class="w-blog-entry-meta-date-day"><%= @job.created_at.strftime("%d")%></span>
+																<span class="w-blog-entry-meta-date-month"><%= @job.created_at.strftime("%b") + ","  %></span>
+																<span class="w-blog-entry-meta-date-year"><%= "20" + @job.created_at.strftime("%y") %></span>&nbsp;&nbsp;
+																</span>
+															</div>
+
+															<div class="w-blog-entry-meta-tags">
+																<i class="icon-calendar-empty"></i>
+																<span >Days Remaining: </span><span style="background-color:#d35400; color:#ffffff; -moz-border-radius: 8px; border-radius: 8px;" >&nbsp;&nbsp;<%= jobdays %> Days&nbsp;&nbsp;</span>
+															</div>
+<% if false %>
+															<div class="w-blog-entry-meta-tags">
+																<i class="icon-cloud-download"></i>
+																<span >Applications Recieved: </span><span style="background-color:#16a085; color:#ffffff; -moz-border-radius: 8px; border-radius: 8px;" >&nbsp;&nbsp;<%= @job.jobapplications.count %>&nbsp;&nbsp;</span>
+															</div>
+<% end %>
+
+
+
+														</div>
+
+													</div>
+												</div>
+											</div>
+
+									</div>
+								</div>
+						
+							</div>
+						</div>
+
+						
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+		<!-- /MAIN -->
+		<% end %>

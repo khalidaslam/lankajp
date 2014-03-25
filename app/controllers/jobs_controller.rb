@@ -31,7 +31,7 @@ class JobsController < ApplicationController
     @job.employerlinkcode = SecureRandom.hex(32)
      if @job.save
       # Handle a successful save.
-         if @job.emailack == true
+         if @job.postemailack == true
           JobMailer.jobposting_confirmation(@job).deliver
          end
       redirect_to root_url

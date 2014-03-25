@@ -19,4 +19,3 @@
 //= require cadsjs/jquery.fancybox-buttons8cbb.js
 //= require cadsjs/jquery.fancybox-media8cbb.js
 //= require cadsjs/global.js
-//= require cadsjs/masonry.pkgd.min.js
