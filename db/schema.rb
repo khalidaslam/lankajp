@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140322005465) do
+ActiveRecord::Schema.define(:version => 20140326210944) do
 
   create_table "careerlevels", :force => true do |t|
     t.string   "name",       :default => "", :null => false
@@ -132,10 +132,36 @@ ActiveRecord::Schema.define(:version => 20140322005465) do
     t.datetime "updated_at",                 :null => false
   end
 
+  create_table "resumes", :force => true do |t|
+    t.integer  "user_id",                 :default => 0,     :null => false
+    t.string   "fullname",                :default => "",    :null => false
+    t.string   "email",                   :default => "",    :null => false
+    t.string   "city",                    :default => "",    :null => false
+    t.string   "contact",                 :default => "",    :null => false
+    t.text     "resumetags",              :default => "",    :null => false
+    t.boolean  "ischecked",               :default => false, :null => false
+    t.datetime "created_at",                                 :null => false
+    t.datetime "updated_at",                                 :null => false
+    t.string   "resumefile_file_name"
+    t.string   "resumefile_content_type"
+    t.integer  "resumefile_file_size"
+    t.datetime "resumefile_updated_at"
+  end
+
   create_table "salaries", :force => true do |t|
     t.string   "salaryrange", :default => "", :null => false
     t.datetime "created_at",                  :null => false
     t.datetime "updated_at",                  :null => false
+  end
+
+  create_table "subscriptions", :force => true do |t|
+    t.integer  "user_id",        :default => 0,     :null => false
+    t.string   "fullname",       :default => "",    :null => false
+    t.string   "email",          :default => "",    :null => false
+    t.boolean  "issubscribed",   :default => false, :null => false
+    t.string   "subscribedtags", :default => "",    :null => false
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
   end
 
   create_table "users", :force => true do |t|

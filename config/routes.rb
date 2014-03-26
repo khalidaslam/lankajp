@@ -1,5 +1,8 @@
 Lankajp::Application.routes.draw do
 
+  
+
+
   #  if Rails.env == 'development'
 #    devise_for :users, :controllers => { :registrations => "registrations" } 
 #  else
@@ -14,6 +17,10 @@ Lankajp::Application.routes.draw do
 
   resources :jobs
   resources :job_posts
+
+
+  # resources :resumes For Future Upgrades
+  # resources :subscriptions For Future Upgrades
 
 
   devise_for :users

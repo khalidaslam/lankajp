@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Fullname:</b>
+  <%= @resume.fullname %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @resume.email %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @resume.city %>
+</p>
+
+<p>
+  <b>Contact:</b>
+  <%= @resume.contact %>
+</p>
+
+<p>
+  <b>Resumetags:</b>
+  <%= @resume.resumetags %>
+</p>
+
+<p>
+  <b>Ischecked:</b>
+  <%= @resume.ischecked %>
+</p>
+
+
+<%= link_to 'Edit', edit_resume_path(@resume) %> |
+<%= link_to 'Back', resumes_path %>

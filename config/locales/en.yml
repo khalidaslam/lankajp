@@ -15,7 +15,7 @@ en:
       job_post:
         fullname: "Full Name"
         contactno: "Contact Number"
-        adimage: "Job Ad Image or File"
+        adimage: "Job Ad File"
         email: "Email Address"
         terms: "Terms & Conditions"
       resume:

@@ -43,7 +43,7 @@
 			                    </div>
 
 			                    <div class="col-sm-12"><br />
-			                        <%= f.label :contactno, "Contact Number: *" %>
+			                        <%= f.label :contactno, "Contact Number:" %>
 			                    	<%= f.text_field :contactno, :class => "form-control"%>
 			                    </div>    
 <% if false %>
@@ -54,7 +54,7 @@
 <% end %>							
 						
 								<div class="col-sm-12"><br />                                           
-                                    <%= f.label :humanizer_answer, f.object.humanizer_question %>*
+                                    <%= f.label :humanizer_answer, f.object.humanizer_question %>
                                     <%= f.text_field :humanizer_answer, :class => "form-control" %>
                                     <%= f.hidden_field :humanizer_question_id %>
                                 </div>
