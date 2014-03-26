@@ -40,7 +40,7 @@
 				  <% end %>
 					
                 <div class="panel panel-default">
-                    <div class="panel-heading">Create Job Post</div>
+                    <div class="panel-heading">Your Details</div>
                     <div class="panel-body">
 
 
@@ -64,10 +64,12 @@
                                         	<%= f.text_field :contactno, :class => "form-control"%>
                                         </div>    
 
+                                        <% if false %>
                                         <div class="col-sm-12"><br />
                                         	<label>Receive Resumes At Your Email Address:</label><br />    
 			                                    <%= f.check_box :cvemailoption %> Select if you wish to receive applicant's resume at my email address.
 			                            </div>
+                                        <% end %>
 
                                     </div>
                                 </div>
@@ -95,7 +97,9 @@
                                         	<%= f.file_field :adimage %>
                                         </div>
                                         <small>&nbsp;&nbsp;&nbsp;&nbsp;* supported file type: Jpg/Jpeg/bmp/png/gif  OR  doc/docx/pdf <br />&nbsp;&nbsp;&nbsp;&nbsp;* max file size: 512KB
-												</small>
+										</small><br /><br />
+
+
                                     </div>
                                 </div>
 
@@ -105,11 +109,35 @@
                 </div>
 
 
-                <div class="panel panel-default">
-                    <div class="panel-heading">Complete ad</div>
-                        <div class="panel-body">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Accept terms and Humanizer Question</div>
+                            <div class="panel-body">
+
+                            <div class="row">  
+                                <div class="col-sm-12 ">
+
+                                    <div class="form-group">
+                                        <div class="row">
+
+                                            <div class="col-sm-12">                                           
+                                                <%= f.label :humanizer_answer, f.object.humanizer_question %>
+                                                <%= f.text_field :humanizer_answer, :class => "form-control" %>
+                                                <%= f.hidden_field :humanizer_question_id %>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+
+                                </div>          
+                            </div>          
+
+
+                                        
 
                             <div class="checkbox">
+
+
                                 
                                 <label>
                                     <%= f.check_box :terms %>  I agree to the terms and conditions and regulations. <br />My ad include necessary details regarding job. 

@@ -1,7 +1,13 @@
 class JobApplication < ActiveRecord::Base
+	include Humanizer
+    require_human_on :create
+
   belongs_to :job
   belongs_to :user
-  attr_accessible :contactno, :email, :fullname, :job_id, :resume, :tags
+  attr_accessible :contactno, :email, :fullname, :job_id, :resume, :tags, 
+  :humanizer_answer, :humanizer_question_id
+
+  
   has_attached_file :resume
 
   include PgSearch

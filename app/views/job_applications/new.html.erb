@@ -45,9 +45,16 @@
 <% if false %>
 			                    <div class="col-sm-12"><br />
 			                        <%= f.label :tags, "Resume Keywords: *" %>
-			                    	<%= f.text_field :contactno, :class => "form-control"%>
+			                    	<%= f.text_field :tags, :class => "form-control"%>
 			                    </div>  
-<% end %>
+<% end %>							
+						
+								<div class="col-sm-12">                                           
+                                    <%= f.label :humanizer_answer, f.object.humanizer_question %>
+                                    <%= f.text_field :humanizer_answer, :class => "form-control" %>
+                                    <%= f.hidden_field :humanizer_question_id %>
+                                </div>
+
 			                    <div class="col-sm-12"><br />
 			                        <%= f.label :resume, "Upload Resume: *" %>
 			                    	<%= f.file_field :resume, :class => ""%>

@@ -1,8 +1,12 @@
 class JobPost < ActiveRecord::Base
+	include Humanizer
+    require_human_on :create
+
 	belongs_to :user
 	belongs_to :job_post_type
 
-  attr_accessible :contactno, :cvemailoption, :email, :fullname, :job_post_type, :jobuuid, :terms, :adimage
+  attr_accessible :contactno, :cvemailoption, :email, :fullname, :job_post_type,
+  :jobuuid, :terms, :adimage, :humanizer_answer, :humanizer_question_id
 
   include PgSearch
 	pg_search_scope :search, against: [:fullname, :email, :jobuuid],
