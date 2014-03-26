@@ -33,7 +33,9 @@ class Job < ActiveRecord::Base
 	pg_search_scope :search, against: [:tags],
 	using: {tsearch: {dictionary: "english"}}
 
-
+def to_param
+  "#{id} #{title} #{companyname}".parameterize
+end
 
 def self.jobs_search(query)
 	if query.present?
