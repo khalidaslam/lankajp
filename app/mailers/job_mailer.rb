@@ -1,7 +1,7 @@
 class JobMailer < ActionMailer::Base
 require 'open-uri'
   default :from => "noreply@lankajobpost.com"
-  default :to => "admin@lankajobpost.com"
+  default :to => "support@lankajobpost.com"
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
   #
@@ -52,7 +52,7 @@ require 'open-uri'
     attachments.inline['galaxynotepromo.jpg'] = File.read("#{Rails.root}/app/assets/images/galaxynotepromo.jpg")
     attachments.inline['logo.png'] = File.read("#{Rails.root}/app/assets/images/logo.png")
     mail to: "", bcc: "#{promotion.contactlist}",
-    from: "Lankajobpost.com <admin@lankajobpost.com>", :subject => "#{promotion.subject}"
+    from: "Lankajobpost.com <support@lankajobpost.com>", :subject => "#{promotion.subject}"
   end
 
 end
