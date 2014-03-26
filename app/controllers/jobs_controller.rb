@@ -4,7 +4,7 @@ class JobsController < ApplicationController
 
 
   def index
-    @jobs = Job.where(created_at: 15.days.ago..Time.now).order("updated_at DESC").jobs_search(params[:query]).page(params[:page]).per_page(10)
+    @jobs = Job.where(created_at: 15.days.ago..Time.now).order("updated_at DESC").jobs_search(params[:query]).page(params[:page]).per_page(30)
   end
 
 

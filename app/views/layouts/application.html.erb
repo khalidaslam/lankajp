@@ -33,6 +33,9 @@
 <%= render 'shared/footer' %>
 
 
-  <%= javascript_include_tag "application" %>
+<%= javascript_include_tag "application" %>
+<% if  Rails.env.production? %>
+<%= render 'shared/ga' %>
+<% end %>
 </body>
 </html>
