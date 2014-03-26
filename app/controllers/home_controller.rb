@@ -4,5 +4,6 @@ class HomeController < ApplicationController
   def index
   	@jobs = Job.all
   	@jobsflash = Job.find(:all, :order => "id desc", :limit => 5)
+  	@footerlinks = true
   end
 end

@@ -17,7 +17,7 @@ require 'open-uri'
         else
           attachments[job_application.resume_file_name] = open("#{job_application.resume.path}").read
         end    
-
+        attachments.inline['logo.png'] = File.read("#{Rails.root}/app/assets/images/logo.png")
         if @job.cvemailoption == true
           mail from: @job_application.email, to: @job.companyemail, subject: "Mr #{@job_application.fullname} has applied for #{jobtitle} -- Courtesy of lankajobpost.com"
         end

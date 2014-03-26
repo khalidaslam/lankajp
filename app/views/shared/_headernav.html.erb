@@ -32,6 +32,9 @@
                         <% else %>
                         <li><%= link_to 'Register', new_user_registration_path %></li>  
                         <% end %>
+                        <% if user_signed_in? && current_user.isadmin == true %>
+                        <li><%= link_to 'Promotion Emailer', promotion_emailer_path %></li> 
+                        <%end%>
                         <li><%= link_to 'Post an ad', new_job_post_path %></li>
                     </ul> 
 
@@ -45,10 +48,13 @@
                                 <%= link_to "Login", new_user_session_path %> | 
                                 <% end %>
                                 <% if user_signed_in? %>
-                                <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
+                                <%= link_to 'Logout', destroy_user_session_path, :method => :delete %> |
                                 <% else %>
-                                <%= link_to 'Register', new_user_registration_path %>  
+                                <%= link_to 'Register', new_user_registration_path %> |
                                 <% end %>
+                                <% if user_signed_in? && current_user.isadmin == true %>
+                                <%= link_to 'Promotion Emailer', promotion_emailer_path %>
+                                <%end%>
                                 <%= link_to 'Post an ad', new_job_post_path, :class=>"btn btn-warning post-ad-btn" %> 
                             </div>	
                         </div>

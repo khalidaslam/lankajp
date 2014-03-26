@@ -1,4 +1,11 @@
 Lankajp::Application.routes.draw do
+
+  #  if Rails.env == 'development'
+#    devise_for :users, :controllers => { :registrations => "registrations" } 
+#  else
+#    devise_for :users
+#  end
+
   root to: "home#index"
 
   resources :jobs do
@@ -15,6 +22,9 @@ Lankajp::Application.routes.draw do
   get "home/terms"
   get "employer/link"
   
+
+  match 'promotion_emailer' => 'promotion_emailer#new', :as => 'promotion_emailer', :via => :get
+  match 'promotion_emailer' => 'promotion_emailer#create', :as => 'promotion_emailer', :via => :post
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

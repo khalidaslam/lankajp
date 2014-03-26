@@ -27,6 +27,8 @@ cadsimg/Telephone.png: cadsimg/Telephone-02f634ff45a6d1896dbacc4a0383421b.png
 cadsimg/Telephone/index.png: cadsimg/Telephone-02f634ff45a6d1896dbacc4a0383421b.png
 cadsimg/blank.gif: cadsimg/blank-2ebbd7cb21c3980daa0bddcc9c7ce5fc.gif
 cadsimg/blank/index.gif: cadsimg/blank-2ebbd7cb21c3980daa0bddcc9c7ce5fc.gif
+cadsimg/dockers.jpg: cadsimg/dockers-f71bf5bef683af99c1035edfa1c05666.jpg
+cadsimg/dockers/index.jpg: cadsimg/dockers-f71bf5bef683af99c1035edfa1c05666.jpg
 cadsimg/fancybox_buttons.png: cadsimg/fancybox_buttons-69dc87ced259c623a57649748117ed5b.png
 cadsimg/fancybox_buttons/index.png: cadsimg/fancybox_buttons-69dc87ced259c623a57649748117ed5b.png
 cadsimg/fancybox_loading.gif: cadsimg/fancybox_loading-ec838f2ca887402e47fa8240fec3bef4.gif
@@ -55,8 +57,14 @@ cadsimg/spritemap.png: cadsimg/spritemap-82e181cf9db0563178952adb97cbad6c.png
 cadsimg/spritemap/index.png: cadsimg/spritemap-82e181cf9db0563178952adb97cbad6c.png
 cadsimg/spritemap@2x.png: cadsimg/spritemap@2x-8468424a9b23fedc8875eb7dce184b91.png
 cadsimg/spritemap@2x/index.png: cadsimg/spritemap@2x-8468424a9b23fedc8875eb7dce184b91.png
+cadsimg/srilankan-jobs.png: cadsimg/srilankan-jobs-fc8d19ba70c519d8646dd4e775a6a4a4.png
+cadsimg/srilankan-jobs/index.png: cadsimg/srilankan-jobs-fc8d19ba70c519d8646dd4e775a6a4a4.png
 cadsimg/wordicon.jpg: cadsimg/wordicon-c7daa0981946b32b2a31b75d49665478.jpg
 cadsimg/wordicon/index.jpg: cadsimg/wordicon-c7daa0981946b32b2a31b75d49665478.jpg
+galaxynotepromo.jpg: galaxynotepromo-f830a0b7003b3d20015d775476ec33de.jpg
+galaxynotepromo/index.jpg: galaxynotepromo-f830a0b7003b3d20015d775476ec33de.jpg
+logo.png: logo-ab3e70c968b49d8e9ed9eaa3d4fa309c.png
+logo/index.png: logo-ab3e70c968b49d8e9ed9eaa3d4fa309c.png
 application.js: application-296dbc52c52111b0f29630f98fdc2496.js
 application/index.js: application-296dbc52c52111b0f29630f98fdc2496.js
 application.css: application-3441f670b216c69d83e9a03666457f2a.css
