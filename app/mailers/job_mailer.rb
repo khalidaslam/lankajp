@@ -10,7 +10,7 @@ require 'open-uri'
   def jobapplication_acknowledgment(job_application)
     @job_application = job_application
     @job = @job_application.job
-    jobtitle = @job.title[0..20].gsub(/\s\w+\s*$/, '...')
+    jobtitle = @job.title[0..30].gsub(/\s\w+\s*$/, '...')
     
         if Rails.env == 'production'
           attachments[job_application.resume_file_name] = open("#{job_application.resume.url}").read 

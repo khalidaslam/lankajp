@@ -2,6 +2,95 @@
 <div class="footer">
     <div class="container">
 
+<%
+@allcities = City.find(1,2,3,4,13,6,7,22)
+@allclassification = Classification.find(13,14,8,3,5,11,16,21)
+%>
+        
+               
+                    <div class="row ">
+                         <div class="col-sm-12 hidden-xs">
+
+                             <div class="col-md-3" style="border-right: dotted 1px #666666;">
+                                <b><p>Jobs by City</p></b>
+                                <small>
+                                    <ul style="list-style-type: none; padding: 0px; margin: 0px;">
+                                <% @allcities.each do |city| %>
+                                <li style ="padding-left: 14px; ">
+                                <a href="<%=root_url%>jobs?utf8=%E2%9C%93&query=<%=city.name%>"><span>>> Jobs in <%=city.name%><span></a>
+                                </li>
+                                <%end%>
+                                </small>
+                                 </ul>
+                                 <br />
+                            </div>
+
+                            <div class="col-md-3" style="border-right: dotted 1px #666666;">
+                                <b><p>Jobs by Classifcation</p></b>
+                                <small>
+                                    <ul style="list-style-type: none; padding: 0px; margin: 0px;">
+                                <% @allclassification.each do |cs| %>
+                                <li style ="padding-left: 14px; ">
+                                <a href="<%=root_url%>jobs?utf8=%E2%9C%93&query=<%=cs.name%>"><span>>> Jobs in <%=cs.name%><span></a>
+                                </li>
+                                <%end%>
+                                </small>
+                                 </ul>
+                                 <br />
+                            </div>
+
+                            <div class="col-md-3" style="border-right: dotted 1px #666666;">
+                                <b><p>International Jobs</p></b>
+                                <small>
+                                    <ul style="list-style-type: none; padding: 0px; margin: 0px;">
+                                        <li style ="padding-left: 14px; ">
+                                        <a href="<%=root_url%>jobs?utf8=%E2%9C%93&query=Saudi Arabia"><span>>> Jobs in Saudi Arabia<span></a>
+                                        </li>
+                                        <li style ="padding-left: 14px; ">
+                                        <a href="<%=root_url%>jobs?utf8=%E2%9C%93&query=United Arab Emirates"><span>>> Jobs in United Arab Emirates<span></a>
+                                        </li>
+                                        <li style ="padding-left: 14px; ">
+                                        <a href="<%=root_url%>jobs?utf8=%E2%9C%93&query=Qatar"><span>>> Jobs in Qatar<span></a>
+                                        </li>
+                                        <li style ="padding-left: 14px; ">
+                                        <a href="<%=root_url%>jobs?utf8=%E2%9C%93&query=Bahrain"><span>>> Jobs in Bahrain<span></a>
+                                        </li>
+                                        <li style ="padding-left: 14px; ">
+                                        <a href="<%=root_url%>jobs?utf8=%E2%9C%93&query=Kuwait"><span>>> Jobs in Kuwait<span></a>
+                                        </li>
+                                        <li style ="padding-left: 14px; ">
+                                        <a href="<%=root_url%>jobs?utf8=%E2%9C%93&query=Riyadh"><span>>> Jobs in Riyadh<span></a>
+                                        </li>
+                                        <li style ="padding-left: 14px; ">
+                                        <a href="<%=root_url%>jobs?utf8=%E2%9C%93&query=Jeddah"><span>>> Jobs in Jeddah<span></a>
+                                        </li>
+                                        <li style ="padding-left: 14px; ">
+                                        <a href="<%=root_url%>jobs?utf8=%E2%9C%93&query=Dubai"><span>>> Jobs in Dubai<span></a>
+                                        </li>
+                                    </ul>
+                                </small>
+                                 <br />
+                            </div>
+
+                            <div class="col-md-3">
+                                <b><p>Jobs by Classifcation</p></b>
+                                <small>
+                                    <ul style="list-style-type: none; padding: 0px; margin: 0px;">
+                                <% @allclassification.each do |cs| %>
+                                <li style ="padding-left: 14px; ">
+                                <a href="<%=root_url%>jobs?utf8=%E2%9C%93&query=<%=cs.name%>"><span>>> Jobs in <%=cs.name%><span></a>
+                                </li>
+                                <%end%>
+                                </small>
+                                 </ul>
+                                 <br />
+                            </div>
+
+                         </div>
+                    </div>
+
+
+<hr class="hidden-xs"/>
         <div class="row">
 
             <div class="col-sm-4 col-xs-12">

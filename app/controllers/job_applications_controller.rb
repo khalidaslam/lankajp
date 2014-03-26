@@ -34,10 +34,11 @@ class JobApplicationsController < ApplicationController
   def create
     @job = Job.find(params[:job_id])
     @job_application = @job.job_applications.build(params[:job_application])
-      if user_signed_in?
-      @job_application.update_attribute(:user_id, current_user.id)
-      end
+      
       if @job_application.save
+            if user_signed_in?
+            @job_application.update_attribute(:user_id, current_user.id)
+            end
         JobMailer.jobapplication_acknowledgment(@job_application).deliver
         redirect_to([@job], :notice => 'Job application successfully sent.') 
       else

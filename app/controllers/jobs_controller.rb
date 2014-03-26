@@ -4,7 +4,7 @@ class JobsController < ApplicationController
 
 
   def index
-    @jobs = Job.where(created_at: 15.days.ago..Time.now).order("updated_at DESC").jobs_search(params[:query]).tags_search(params[:tags]).page(params[:page]).per_page(10).reorder("updated_at DESC")
+    @jobs = Job.where(created_at: 15.days.ago..Time.now).order("updated_at DESC").jobs_search(params[:query]).page(params[:page]).per_page(10).reorder("updated_at DESC")
   end
 
 
@@ -29,6 +29,8 @@ class JobsController < ApplicationController
   def create
     @job = Job.new(params[:job])
     @job.employerlinkcode = SecureRandom.hex(32)
+    @job.tags = job_tagger(@job)
+
      if @job.save
       # Handle a successful save.
          if @job.postemailack == true
@@ -61,5 +63,12 @@ class JobsController < ApplicationController
     redirect_to root_url
   end
 
+private
+
+def job_tagger(job)
+  jbc = "Sri Lanka"
+  [jbc, job.title, job.companyname, job.city.name, job.city.province.name, job.classification.name,
+  job.worktype.name, job.careerlevel.name, job.jobskills].join(" ")
+end
 
 end

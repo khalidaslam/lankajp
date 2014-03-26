@@ -16,6 +16,7 @@ class CreateJobs < ActiveRecord::Migration
       t.string :title, :null => false, :default => ""
       t.string :jobuuid, :null => false, :default => ""
       t.string :employerlinkcode, :null => false, :default => ""
+      t.string :jobskills, :null => false, :default => ""
       t.text :tags, :null => false, :default => ""
       t.string :companyname, :null => false, :default => ""
       t.string :companyemail, :null => false, :default => ""

@@ -1,3 +1,10 @@
+<% if params[:query].empty? 
+    content_for :title, "Find Sri Lankan Jobs Fast Simple and Effective Way"
+    else
+    content_for :title, "All Sri Lankan jobs for #{params[:query].capitalize}"
+    end
+%>
+
             <div class="jumbotron home-tron-search well ">
                 <div class="container">
                     <%= form_tag jobs_path, method: :get do %>
@@ -13,25 +20,9 @@
 
                                             <div class="col-sm-12 col-sm-offset-1">
                                                 <div class="input-group">
-                                                    <span class="input-group-addon input-group-addon-text hidden-xs">Find me a</span>
+                                                    <span class="input-group-addon input-group-addon-text hidden-xs"></span>
 
-                                                    <%= text_field_tag :query, params[:query], :class=> "form-control col-sm-3", :placeholder => 'Let us find you a better job', :autofocus => true, :autocomplete => :off %>
-                                                    <div class=" input-group-addon hidden-xs">
-                                                        <div class="btn-group" >
-                                                            <button type="button" class="btn  dropdown-toggle" data-toggle="dropdown">
-                                                                All categories <span class="caret"></span>
-                                                            </button>
-                                                            <ul class="dropdown-menu" role="menu">
-                                                                <li><a href="#">Cars, Vans & Motorbikes</a></li>
-                                                                <li><a href="#">Community</a></li>
-                                                                <li><a href="#">Flats & Houses</a></li>
-                                                                <li><a href="#">For Sale</a></li>
-                                                                <li><a href="#">Jobs</a></li>
-                                                                <li><a href="#">Pets</a></li>
-                                                                <li><a href="#">Services</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
+                                                    <%= text_field_tag :query, params[:query], :class=> "form-control col-sm-3", :placeholder => 'e.g. Mechanical Engineer Full Time Colombo', :autofocus => true, :autocomplete => :off %>
 
                                                 </div>
 
@@ -45,7 +36,9 @@
                                     <div class="col-sm-4 col-xs-3" style="text-align: center">
                                         <div class="row">
                                             <div class="col-sm-11 pull-right">
-                                                <%= submit_tag :search, name: nil, :class=>"btn btn-primary search-btn" %>
+                                                <%= button_tag(type: "submit", class: "btn btn-primary search-btn", name: nil ) do %>
+                                                <i class="fa fa-search"></i>&nbsp;&nbsp;&nbsp;&nbsp;Search
+                                                <% end %>
                                             </div>
                                         </div>
                                     </div>
@@ -69,7 +62,7 @@
     <div class="row">
         <div class="col-sm-12">
             <ol class="breadcrumb">
-                <li class="active"><%= @jobs.count %> Jobs found <strong><%=params[:query]%> <%=params[:tags]%></strong> in London</li>
+                <li class="active"><%= @jobs.count %> Jobs found for <strong><%=params[:query]%> <%=params[:tags]%></strong></li>
             </ol>
         </div>
     </div>
@@ -78,127 +71,113 @@
 
     <div class="row">
         <div class="col-sm-4  hidden-xs">
-            <div class="sidebar ">      
-        
-    
+            <div class="sidebar ">     
+                    <% if false %>
+                    <div class="row ">
+                        <div class="col-sm-11">
 
-    <div class="row ">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Filters</div>
+                                <div class="panel-body">
+                                    <form class="form-inline mini" style="margin-bottom: 0px;">
+                                        <fieldset>              
+
+                                            <div class="row filter-row">
+                                                <div class="col-sm-6">
+                                                    <label>Age</label>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <select class="col-sm-10 form-control ">
+                                                        <option>Any</option>
+                                                        <option>Alfa romeo</option>
+                                                        <option>Houses</option>
+                                                        <option>Flats/ Apartments</option>
+                                                        <option>Bungalows</option>
+                                                        <option>Land</option>
+                                                        <option>Commercial property</option>
+                                                        <option>Other</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="row filter-row">    
+
+                                                <div class="col-sm-2 pull-right" style="margin-top: 10px;">
+                                                    <button class="btn btn-primary pull-right" type="submit">Update results</button>
+
+                                                </div>
+                                            </div>                      
 
 
-        <div class="col-sm-11">
-
-            <div class="panel panel-default">
-                <div class="panel-heading">Filters</div>
-                <div class="panel-body">
-                    <form class="form-inline mini" style="margin-bottom: 0px;">
-                        <fieldset>              
-
-                            <div class="row filter-row">
-                                <div class="col-sm-6">
-                                    <label>Age</label>
-                                </div>
-                                <div class="col-sm-6">
-                                    <select class="col-sm-10 form-control ">
-                                        <option>Any</option>
-                                        <option>Alfa romeo</option>
-                                        <option>Houses</option>
-                                        <option>Flats/ Apartments</option>
-                                        <option>Bungalows</option>
-                                        <option>Land</option>
-                                        <option>Commercial property</option>
-                                        <option>Other</option>
-                                    </select>
+                                        </fieldset>
+                                    </form>
                                 </div>
                             </div>
+                        </div>
+                    </div>
 
-                            <div class="row filter-row">    
 
-                                <div class="col-sm-2 pull-right" style="margin-top: 10px;">
-                                    <button class="btn btn-primary pull-right" type="submit">Update results</button>
+                    <div class="row ">
+                        <div class="col-sm-11">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Refine category</div>
+                                <div class="panel-body">
+                                    <ul class="nav nav-category">
+                                        <li>
+                                            <a class="active" href="category.html">All categories</a>
+                                            <ul>
+                                                <li><a href="listings.html">Cars, Vans & Motorbikes</a>
+                                                <ul>
+                                                    <li><a class="active" href="listings.html">Cars</a>
+                                                        <ul>
+                                                            <li><a class="active" href="listings.html"><strong>Porsche</strong></a> (66)<a href="#" class="remove-category"><i class="fa fa-times"></i></a></li>
+                                                        </ul>
+                                                    </li>
+
+                                                </ul>
+                                                    </li>
+                                            </ul>
+                                        </li>
+                                    </ul>               
 
                                 </div>
-                            </div>                      
-
-
-                        </fieldset>
-                    </form>
-                </div>
-            </div>
-
-
-        </div>
-    </div>
-
-
-    <div class="row ">
-        <div class="col-sm-11">
-            <div class="panel panel-default">
-                <div class="panel-heading">Refine category</div>
-                <div class="panel-body">
-                    <ul class="nav nav-category">
-                        <li>
-                            <a class="active" href="category.html">All categories</a>
-                            <ul>
-                                <li><a href="listings.html">Cars, Vans & Motorbikes</a>
-                                <ul>
-                                    <li><a class="active" href="listings.html">Cars</a>
-                                        <ul>
-                                            <li><a class="active" href="listings.html"><strong>Porsche</strong></a> (66)<a href="#" class="remove-category"><i class="fa fa-times"></i></a></li>
-                                        </ul>
-                                    </li>
-
-                                </ul>
-                                    </li>
-                            </ul>
-                        </li>
-                    </ul>               
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row ">
-        <div class="col-sm-11">
-            <div class="panel panel-default">
-                <div class="panel-heading">Refine category</div>
-                <div class="panel-body">
-
-                    <div class="property">
-                        <a href="#AC+Cobra">AC Cobra</a>
+                            </div>
+                        </div>
                     </div>
-                             
 
-                </div>
-            </div>
+
+                    <div class="row ">
+                        <div class="col-sm-11">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Refine category</div>
+                                <div class="panel-body">
+
+                                    <div class="property">
+                                        <a href="#AC+Cobra">AC Cobra</a>
+                                    </div>
+                                             
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <% end %>
+
+                    <div class="row ">
+                        <div class="col-sm-11">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Ads</div>
+                                <div class="panel-body">
+                                    
+                                    <div class="well">
+                                    <img src ="<%= asset_path 'cadsimg/dockers.jpg'%>" class="img-responsive">
+                                    </div>   
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+            </div> 
         </div>
-    </div>
-
-    <div class="row ">
-        <div class="col-sm-11">
-            <div class="panel panel-default">
-                <div class="panel-heading">Location</div>
-                <div class="panel-body">
-                    <ul class="nav">
-                        <li>
-                            <a class="active" href="category.html">Greater London (12)</a>
-                            <ul>
-                                <li><a href="listings.html"> - Central London (11)</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="category.html">Brighton (5)</a></li>
-                    </ul>                   
-
-                </div>
-            </div>
-        </div>
-    </div>  
-
-
-
-
-
-</div>        </div>
 
         <div class="col-sm-8 pull-right listings">
 
@@ -230,6 +209,12 @@
                             <span class="classified_links pull-right">
                                 <%= link_to "View Job Ad", job_path(job), :class => "link-info underline" , :style => "color:#3498db;"%>&nbsp;
                             </span>
+                        </p>
+
+                        <p>
+                            <strong class="classified_links pull-right">
+                                <img src="<%= asset_path 'cadsimg/srilankan-jobs.png'%>" alt="<%= job.tags %>">
+                            </strong>
                         </p>
                     </div>
                 </div>

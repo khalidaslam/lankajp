@@ -30,10 +30,11 @@ class JobPostsController < ApplicationController
   def create
     @job_post = JobPost.new(params[:job_post])
     @job_post.jobuuid = SecureRandom.hex(7)
-    if user_signed_in?
-      @job_post.update_attribute(:user_id, current_user.id)
-    end
+    
     if @job_post.save
+        if user_signed_in?
+          @job_post.update_attribute(:user_id, current_user.id)
+        end
       # Handle a successful save.
       # Email to JobPoster
       JobMailer.jobposting_acknowledgment(@job_post).deliver

@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(:version => 20140322005465) do
     t.integer  "user_id",             :default => 0,  :null => false
     t.string   "fullname",            :default => "", :null => false
     t.string   "email",               :default => "", :null => false
+    t.text     "tags",                :default => "", :null => false
     t.string   "contactno",           :default => "", :null => false
     t.datetime "created_at",                          :null => false
     t.datetime "updated_at",                          :null => false
@@ -100,6 +101,7 @@ ActiveRecord::Schema.define(:version => 20140322005465) do
     t.string   "title",                    :default => "",    :null => false
     t.string   "jobuuid",                  :default => "",    :null => false
     t.string   "employerlinkcode",         :default => "",    :null => false
+    t.string   "jobskills",                :default => "",    :null => false
     t.text     "tags",                     :default => "",    :null => false
     t.string   "companyname",              :default => "",    :null => false
     t.string   "companyemail",             :default => "",    :null => false

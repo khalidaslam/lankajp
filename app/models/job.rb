@@ -2,7 +2,7 @@ class Job < ActiveRecord::Base
     attr_accessible :companyemail, :companyname, :companyphone, :cvemailoption, :employerlinkcode,
    :freejobpost, :jobuuid, :postemailack, :tags, :title,
    :user_id, :city_id, :classification_id, :worktype_id, :careerlevel_id, :payment_method_id,
-   :salary_id, :job_post_type_id, :experiencelevel_id, :adimage
+   :salary_id, :job_post_type_id, :experiencelevel_id, :adimage, :jobskills
    
   has_many :job_applications
   belongs_to :user
@@ -30,10 +30,7 @@ class Job < ActiveRecord::Base
     :message => 'only (png/gif/jpeg) images'
 
   include PgSearch
-	pg_search_scope :search, against: [:title],
-	using: {tsearch: {dictionary: "english"}}
-
-	pg_search_scope :search_title, against: [:companyemail],
+	pg_search_scope :search, against: [:tags],
 	using: {tsearch: {dictionary: "english"}}
 
 
