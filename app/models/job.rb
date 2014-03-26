@@ -34,7 +34,7 @@ class Job < ActiveRecord::Base
 	using: {tsearch: {dictionary: "english"}}
 
 def to_param
-  "#{id} #{title} #{companyname}".parameterize
+  "#{id} #{title} #{companyname} #{city.name}".parameterize
 end
 
 def self.jobs_search(query)
