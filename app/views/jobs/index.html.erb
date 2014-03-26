@@ -37,7 +37,7 @@
                                         <div class="row">
                                             <div class="col-sm-11 pull-right">
                                                 <%= button_tag(type: "submit", class: "btn btn-primary search-btn", name: nil ) do %>
-                                                <i class="fa fa-search"></i>&nbsp;&nbsp;&nbsp;&nbsp;Search
+                                                <i class=""></i>&nbsp;&nbsp;&nbsp;&nbsp;Search
                                                 <% end %>
                                             </div>
                                         </div>
@@ -62,7 +62,7 @@
     <div class="row">
         <div class="col-sm-12">
             <ol class="breadcrumb">
-                <li class="active"><%= @jobs.count %> Jobs found for <strong><%=params[:query]%> <%=params[:tags]%></strong></li>
+                <li class="active"><%= @jobs.count %> Jobs found <%if params[:query].present?%> for <strong><%=params[:query]%> <%=params[:tags]%></strong> <%end %></li>
             </ol>
         </div>
     </div>
@@ -186,7 +186,7 @@
                     <strong>Today, <%= Time.now.strftime("%d %B, %Y") %></strong>
                 </div>
                 <div class="pull-right">
-                    <strong><%= @jobs.count %> Jobs</strong>
+                    <strong>Job Posts</strong>
                 </div>
             </div>
 

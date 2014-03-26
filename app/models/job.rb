@@ -43,14 +43,5 @@ def self.jobs_search(query)
 	end
 end
 
-def self.tags_search(tags)
-	if tags.present?
-		search_title(tags)
-	else
-		scoped
-	end
-end
-
-
 
 end
