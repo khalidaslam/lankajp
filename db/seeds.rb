@@ -85,7 +85,8 @@ City.create([
 {:name => 'Harispattuwa', :province_id => 1},
 {:name => 'Kadugannawa', :province_id => 1},
 {:name => 'Embilipitiya', :province_id => 6},
-{:name => 'Sigiriya', :province_id => 1}
+{:name => 'Sigiriya', :province_id => 1},
+{:name => 'Kaduwela', :province_id => 8}
 ])
 
 Classification.create([
@@ -132,6 +133,8 @@ Careerlevel.create([
 {:name => 'Executive'},
 {:name => 'Senior Executive'},
 {:name => 'Board Member'},
+{:name => 'Experienced'},
+{:name => 'Junior'},
 
 ])
 

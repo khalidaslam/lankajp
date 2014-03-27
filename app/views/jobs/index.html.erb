@@ -221,7 +221,10 @@
             <% end %>
 
             
-            <div class="pagination pull-right">
+            <div class="pagination pull-right hidden-xs">
+                <%= will_paginate @jobs %>
+            </div>
+            <div class="pagination hidden-md">
                 <%= will_paginate @jobs %>
             </div>
 
