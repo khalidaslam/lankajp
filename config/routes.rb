@@ -2,12 +2,12 @@ Lankajp::Application.routes.draw do
 
   
 
-
-  #  if Rails.env == 'development'
-#    devise_for :users, :controllers => { :registrations => "registrations" } 
-#  else
-#    devise_for :users
-#  end
+  # Registration Not open for public setting
+  if Rails.env == 'production'
+   devise_for :users, :controllers => { :registrations => "registrations" } 
+  else
+  devise_for :users
+  end
 
   root to: "home#index"
 
