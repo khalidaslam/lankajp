@@ -207,6 +207,9 @@
                         
                         <p>
                             <span class="classified_links pull-right">
+                                <% if user_signed_in? && current_user,isadmin == true %>
+                                <%= link_to 'Destroy Post', job, method: :delete,:class=>"link-info underline", :style=>"color:#c0392b;", data: { confirm: 'Are you sure?' } %>&nbsp;
+                                <%end%>
                                 <%= link_to "View Job Ad", job_path(job), :class => "link-info underline" , :style => "color:#3498db;"%>&nbsp;
                             </span>
                         </p>
