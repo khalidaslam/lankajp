@@ -162,11 +162,13 @@
     <div class="row ">
         <div class="col-sm-11">
             <div class="panel panel-default">
-                <div class="panel-heading">Refine category</div>
+                <div class="panel-heading">Site Stats</div>
                 <div class="panel-body">
 
                     <div class="property">
-                        <a href="#AC+Cobra">AC Cobra</a>
+                        <span>Total Job Posts: <strong><%= JobPost.count%></strong></span><br />
+                        <span>Total Jobs: <strong><%= Job.count%></strong></span><br />
+                        <span>Total Applications: <strong><%= JobApplication.count%></strong></span>
                     </div>
                              
 
