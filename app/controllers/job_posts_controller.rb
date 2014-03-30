@@ -40,7 +40,7 @@ class JobPostsController < ApplicationController
       JobMailer.jobposting_acknowledgment(@job_post).deliver
       # Email to Admin
       JobMailer.jobposting_adminnotification(@job_post).deliver
-      flash[:notice] = "Job Posting Received - Payment Instructions have been sent at your email address"
+      flash[:notice] = "Job posting is received and is being manually reviewed."
       redirect_to root_path
     else
       render 'new'

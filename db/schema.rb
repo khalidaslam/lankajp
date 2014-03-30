@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140326210944) do
+ActiveRecord::Schema.define(:version => 20140330223958) do
 
   create_table "careerlevels", :force => true do |t|
     t.string   "name",       :default => "", :null => false
@@ -86,6 +86,7 @@ ActiveRecord::Schema.define(:version => 20140326210944) do
     t.string   "adimage_content_type"
     t.integer  "adimage_file_size"
     t.datetime "adimage_updated_at"
+    t.text     "jobdesctext",              :default => "",    :null => false
   end
 
   create_table "jobs", :force => true do |t|
@@ -118,6 +119,7 @@ ActiveRecord::Schema.define(:version => 20140326210944) do
     t.string   "adimage_content_type"
     t.integer  "adimage_file_size"
     t.datetime "adimage_updated_at"
+    t.text     "jobdesctext",              :default => "",    :null => false
   end
 
   create_table "payment_methods", :force => true do |t|
