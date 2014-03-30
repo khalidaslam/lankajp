@@ -23,17 +23,36 @@
                             </div>
 
                             <div class="col-md-3" style="border-right: dotted 1px #666666;">
-                                <b><p>Jobs by Classifcation</p></b>
+                                <b><p>Jobs by Work Type</p></b>
                                 <small>
                                     <ul style="list-style-type: none; padding: 0px; margin: 0px;">
-                                <% @allclassification.each do |cs| %>
-                                <li style ="padding-left: 14px; ">
-                                <a href="<%=root_url%>jobs?utf8=%E2%9C%93&query=<%=cs.name%>"><span>>> Jobs in <%=cs.name%><span></a>
-                                </li>
-                                <%end%>
+                                        <li style ="padding-left: 14px; ">
+                                        <a href="<%=root_url%>jobs?utf8=%E2%9C%93&query=Graduate"><span>>> Graduate Jobs<span></a>
+                                        </li>
+                                        <li style ="padding-left: 14px; ">
+                                        <a href="<%=root_url%>jobs?utf8=%E2%9C%93&query=Contract"><span>>> Contract Jobs<span></a>
+                                        </li>
+                                        <li style ="padding-left: 14px; ">
+                                        <a href="<%=root_url%>jobs?utf8=%E2%9C%93&query=Full Time"><span>>> Full Time Jobs<span></a>
+                                        </li>
+                                        <li style ="padding-left: 14px; ">
+                                        <a href="<%=root_url%>jobs?utf8=%E2%9C%93&query=Part Time"><span>>> Part Time Jobs<span></a>
+                                        </li>
+                                        <li style ="padding-left: 14px; ">
+                                        <a href="<%=root_url%>jobs?utf8=%E2%9C%93&query=Executive"><span>>> Executive Jobs<span></a>
+                                        </li>
+                                        <li style ="padding-left: 14px; ">
+                                        <a href="<%=root_url%>jobs?utf8=%E2%9C%93&query=Intern Junior Trainee"><span>>> Trainee Jobs<span></a>
+                                        </li>
+                                        <li style ="padding-left: 14px; ">
+                                        <a href="<%=root_url%>jobs?utf8=%E2%9C%93&query=Casual"><span>>> Casual Jobs<span></a>
+                                        </li>
+                                        <li style ="padding-left: 14px; ">
+                                        <a href="<%=root_url%>jobs?utf8=%E2%9C%93&query=Voluntary"><span>>> Voluntary Jobs<span></a>
+                                        </li>
+                                    </ul>
                                 </small>
-                                 </ul>
-                                 <br />
+                                 <br />                                
                             </div>
 
                             <div class="col-md-3" style="border-right: dotted 1px #666666;">
@@ -70,35 +89,16 @@
                             </div>
 
                             <div class="col-md-3">
-                                <b><p>Jobs by Work Type</p></b>
+                                <b><p>Jobs by Classifcation</p></b>
                                 <small>
                                     <ul style="list-style-type: none; padding: 0px; margin: 0px;">
-                                        <li style ="padding-left: 14px; ">
-                                        <a href="<%=root_url%>jobs?utf8=%E2%9C%93&query=Graduate"><span>>> Graduate Jobs<span></a>
-                                        </li>
-                                        <li style ="padding-left: 14px; ">
-                                        <a href="<%=root_url%>jobs?utf8=%E2%9C%93&query=Contract"><span>>> Contract Jobs<span></a>
-                                        </li>
-                                        <li style ="padding-left: 14px; ">
-                                        <a href="<%=root_url%>jobs?utf8=%E2%9C%93&query=Full Time"><span>>> Full Time Jobs<span></a>
-                                        </li>
-                                        <li style ="padding-left: 14px; ">
-                                        <a href="<%=root_url%>jobs?utf8=%E2%9C%93&query=Part Time"><span>>> Part Time Jobs<span></a>
-                                        </li>
-                                        <li style ="padding-left: 14px; ">
-                                        <a href="<%=root_url%>jobs?utf8=%E2%9C%93&query=Executive"><span>>> Executive Jobs<span></a>
-                                        </li>
-                                        <li style ="padding-left: 14px; ">
-                                        <a href="<%=root_url%>jobs?utf8=%E2%9C%93&query=Intern Junior Trainee"><span>>> Trainee Jobs<span></a>
-                                        </li>
-                                        <li style ="padding-left: 14px; ">
-                                        <a href="<%=root_url%>jobs?utf8=%E2%9C%93&query=Casual"><span>>> Casual Jobs<span></a>
-                                        </li>
-                                        <li style ="padding-left: 14px; ">
-                                        <a href="<%=root_url%>jobs?utf8=%E2%9C%93&query=Voluntary"><span>>> Voluntary Jobs<span></a>
-                                        </li>
-                                    </ul>
+                                <% @allclassification.each do |cs| %>
+                                <li style ="padding-left: 14px; ">
+                                <a href="<%=root_url%>jobs?utf8=%E2%9C%93&query=<%=cs.name%>"><span>>> Jobs in <%=cs.name%><span></a>
+                                </li>
+                                <%end%>
                                 </small>
+                                 </ul>
                                  <br />
                             </div>
 
