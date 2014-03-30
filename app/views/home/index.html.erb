@@ -89,7 +89,7 @@
             <% @jobs.each_slice(4) do |jobs| %>
             <div class="row">
                 <% jobs.each do |job| %>
-                    <div class="col-sm-3" style="text-align:center;">
+                    <div class="col-sm-3" style="text-align:center; margin-top:-10px; margin-bottom:-20px;">
                         <%= link_to job_path(job) do %>
                         <span style="font-size:14px; color:#2c3e50;"><b><%= job.title %></b></span>
                         <% end %>
