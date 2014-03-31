@@ -125,15 +125,18 @@
             </div>
 
     </div>
-<br /><br />
+<br /><br /><br />
 
 
 
 <div class="container" style="max-width: 1200px !important;">
 
+    <div class="panel panel-default">
+        <div class="panel-heading">Recent Job Posts</div>
+         <div class="panel-body" style="background-color:rgb(247,247,247);">
 
-        <div class="well">
-            
+
+            <h2 style="text-align:center; text-decoration:underline;"> Recent Job Posts</h2>
             <% @jobs.each_slice(4) do |jobs| %>
             <div class="row">
                 <% jobs.each do |job| %>
@@ -156,7 +159,10 @@
             </div>
             <% end %>
 
-        </div> 
+        </div>
+     </div>
+
+</div> 
 
 
 
