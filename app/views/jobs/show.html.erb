@@ -44,5 +44,77 @@ window.close();
           </div>
     </div>
 
+
+    <div class="row">
+        <br /> <br />
+        <div class="col-sm-7">
+            <h4>Job Advertisement in Text:</h4>
+
+            <div class="row">
+
+                <div class="col-xs-12">
+                    <table class="table">
+
+                        <tbody>
+                            <tr>
+                                <th>Title:</th>
+                                <td><%= @job.title %></td>
+                            </tr>
+
+                            <tr>
+                                <th>Location:</th>
+                                <td><%= @job.city.name %></td>
+                            </tr>
+
+                            <tr>
+                                <th>Classification:</th>
+                                <td><%= @job.classification.name %></td>
+                            </tr>   
+
+                            <tr>
+                                <th>Salary:</th>
+                                <td><%= @job.salary.salaryrange %></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <p>
+                <%= @job.jobdesctext.html_safe %>
+            </p>
+            <br /> <br /><br />
+            <p>
+                <strong>If you have been asked money in order to get this job or find this job inappropriate, please report by contacting us.</strong>
+            </p>
+
+            <p>Ad ref: <%= @job.jobuuid %> | Posted: <%= @job.created_at.strftime("%d %B, %Y") %></p>
+
+            <p>
+                <span class="classified_links ">
+                    &nbsp;<a class="link-info " href="mailto:support@lankajobpost.com"><i class="fa fa-envelope-o"></i> support@lankajobpost.com</a></span>
+            </p>
+
+        </div>
+
+
+
+        <div class="col-sm-5 hidden-xs">
+           <div class="panel panel-default">
+                <div class="panel-heading">Ads</div>
+                <div class="panel-body">
+                    
+                    <div class="well">
+                    <img src ="<%= asset_path 'cadsimg/AppThemesClassiPressBanner250x250.jpg'%>" class="img-responsive" style="margin:auto;">
+                    </div>   
+
+                </div>
+            </div>
+        </div>        
+
+    </div>  
+
+
+
 </div>
 

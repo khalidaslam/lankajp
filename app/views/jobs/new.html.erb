@@ -130,6 +130,12 @@
 
 
                                         <div class="col-sm-12"><br />
+                                            <%= f.label :jobdesctext, "Job Description in Text with HTML: *" %>
+                                            <%= f.text_area :jobdesctext, :class => "form-control"%>
+                                        </div>
+
+
+                                        <div class="col-sm-12"><br />
                                         	<%= f.label :classification_id, "Classification: *" %>
                                         	<%= f.collection_select :classification_id, Classification.order('name ASC').all, :id, :name, {:include_blank => "Please select classification"}, {:class=>'form-control'} %>
                                         </div>

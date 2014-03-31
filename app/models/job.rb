@@ -2,7 +2,7 @@ class Job < ActiveRecord::Base
     attr_accessible :companyemail, :companyname, :companyphone, :cvemailoption, :employerlinkcode,
    :freejobpost, :jobuuid, :postemailack, :tags, :title,
    :user_id, :city_id, :classification_id, :worktype_id, :careerlevel_id, :payment_method_id,
-   :salary_id, :job_post_type_id, :experiencelevel_id, :adimage, :jobskills
+   :salary_id, :job_post_type_id, :experiencelevel_id, :adimage, :jobskills, :jobdesctext
    
   has_many :job_applications
   belongs_to :user
