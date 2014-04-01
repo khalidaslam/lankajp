@@ -32,7 +32,7 @@
 
 
   <%= stylesheet_link_tag    "application", :media => "all" %>
-
+<% if false %>
   <style type="text/css">
 		  #dvLoading
 		{
@@ -46,13 +46,15 @@
 		   margin: -25px 0 0 -25px;
 		}
   </style>
-
+<% end %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
 <%= render 'shared/headernav' %>
+<%if false%>
 <div id="dvLoading"></div>
+<%end%>
 <%= yield %>
 <%= render 'shared/footer' %>
 
@@ -63,10 +65,11 @@
 <% end %>
 
 
-
+		<%if false%>
 		 <script type="text/javascript">$(window).load(function(){
 		  $('#dvLoading').fadeOut(1000);
 		});
 		 </script>
+		 <%end%>
 </body>
 </html>
