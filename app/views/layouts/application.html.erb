@@ -32,11 +32,27 @@
 
 
   <%= stylesheet_link_tag    "application", :media => "all" %>
+
+  <style type="text/css">
+		  #dvLoading
+		{
+		   background: url(<%= asset_path 'cadsimg/fancybox_loading@2x.gif' %>) no-repeat center center;
+		   height: 100px;
+		   width: 100px;
+		   position: fixed;
+		   z-index: 1000;
+		   left: 50%;
+		   top: 50%;
+		   margin: -25px 0 0 -25px;
+		}
+  </style>
+
   <%= csrf_meta_tags %>
 </head>
 <body>
 
 <%= render 'shared/headernav' %>
+<div id="dvLoading"></div>
 <%= yield %>
 <%= render 'shared/footer' %>
 
@@ -45,5 +61,12 @@
 <% if  Rails.env.production? %>
 <%= render 'shared/ga' %>
 <% end %>
+
+
+
+		 <script type="text/javascript">$(window).load(function(){
+		  $('#dvLoading').fadeOut(1000);
+		});
+		 </script>
 </body>
 </html>
