@@ -1,3 +1,7 @@
+<% 
+    content_for :title, "Apply for #{@job.title} at  #{@job.companyname} for #{@job.worktype.name} position in #{@job.city.name} "
+
+%>
 <hr class="topbar"/>
 
 
@@ -21,7 +25,7 @@
 	                <div class="col-sm-12">
 	                	
 	                    <h3><strong><%=ja.fullname %></strong> - <%= ja.email %> </h3>
-	                    <p class="muted">Located in <strong>Colombo</strong> || Applied <%=ja.created_at.strftime("%d %B, %Y") %>
+	                    <p class="muted">Contact No: <strong><%= ja.contactno %></strong> || Applied <%=ja.created_at.strftime("%d %B, %Y") %>
 	                    </p>
 	                    <p>
 	                		<span class="classified_links pull-right">

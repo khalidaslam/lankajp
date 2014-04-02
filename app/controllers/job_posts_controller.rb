@@ -33,7 +33,9 @@ class JobPostsController < ApplicationController
     
     if @job_post.save
         if user_signed_in?
-          @job_post.update_attribute(:user_id, current_user.id)
+          @job_post.update_attribute(:user_id, current_user.id)     
+        else
+          @job_post.update_attribute(:user_id, 1) 
         end
       # Handle a successful save.
       # Email to JobPoster

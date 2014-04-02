@@ -221,7 +221,7 @@
                             <h3><strong><%= job_post.fullname %></strong> <%end%> - <%= job_post.email%> - <%= job_post.jobuuid %> - User ID: <%= job_post.user_id %>
                             </h3>
                             
-                            <p class="" style="color:#7f8c8d;">Contact No: <%= job_post.contactno %> || CVs at Email: <%= job_post.cvemailoption %> || Post Type: <%= job_post.job_post_type %> || <%= job_post.created_at.strftime("%d-%b-%Y") %></p>
+                            <p class="" style="color:#7f8c8d;">Contact No: <%= job_post.contactno %> || CVs at Email: <%= job_post.cvemailoption %> || Post Type: || <%= job_post.created_at.strftime("%d-%b-%Y") %></p>
                             <p>
                             <span class="classified_links pull-right">
                                 <%= link_to 'Destroy Post', job_post, method: :delete,:class=>"link-info underline", :style=>"color:#c0392b;", data: { confirm: 'Are you sure?' } %>&nbsp;

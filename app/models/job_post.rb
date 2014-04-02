@@ -14,7 +14,7 @@ class JobPost < ActiveRecord::Base
 
 
 
-	validates :fullname, :email, :contactno, presence: true, length: { maximum: 100 }
+	validates :fullname, :email, :contactno, presence: true, length: { maximum: 50 }
 
 	validates :email, :format => { :with => %r{.+@.+\..+} }, :allow_blank => true
 

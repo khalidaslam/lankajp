@@ -66,12 +66,12 @@
                                         	<%= f.text_field :contactno, :class => "form-control"%>
                                         </div>    
 
-                                        <% if false %>
+                                        
                                         <div class="col-sm-12"><br />
                                         	<label>Receive Resumes At Your Email Address:</label><br />    
-			                                    <%= f.check_box :cvemailoption %> Select if you wish to receive applicant's resume at my email address.
+			                                    <%= f.check_box :cvemailoption %> Select if you wish to receive applicant's resume at your email address. <br /><br /><small><strong>*You will also receive a secret employer link in email as well where you can view and download applicant's resumes without getting your inbox filled.</strong></small>
 			                            </div>
-                                        <% end %>
+                                        
 
                                     </div>
                                 </div>
@@ -98,9 +98,8 @@
                                         	<%= f.label :adimage, "Upoad Job Ad Image File" %>
                                         	<%= f.file_field :adimage %>
                                         </div>
-                                        <small>&nbsp;&nbsp;&nbsp;&nbsp;* supported file type: Jpg/Jpeg/bmp/png/gif  OR  doc/docx/pdf <br />&nbsp;&nbsp;&nbsp;&nbsp;* max file size: 512KB<br />&nbsp;&nbsp;&nbsp;&nbsp;* you can also send your job ads <b>jobads@lankajobpost.com</b><br />
-										</small><br /><br />
-
+                                        <small>&nbsp;&nbsp;&nbsp;&nbsp;* supported file type: Jpg/Jpeg/bmp/png/gif  OR  doc/docx/pdf <br />&nbsp;&nbsp;&nbsp;&nbsp;* max file size: 512KB<%if false%><br />&nbsp;&nbsp;&nbsp;&nbsp;* you can also send your job ads <b>jobads@lankajobpost.com</b><br /><%end%>
+										</small><br />
 
                                     </div>
                                 </div>

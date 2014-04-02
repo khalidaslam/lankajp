@@ -38,6 +38,8 @@ class JobApplicationsController < ApplicationController
       if @job_application.save
             if user_signed_in?
             @job_application.update_attribute(:user_id, current_user.id)
+          else
+            @job_application.update_attribute(:user_id, 1)
             end
         JobMailer.jobapplication_acknowledgment(@job_application).deliver
         redirect_to([@job], :notice => 'Job application successfully sent.') 

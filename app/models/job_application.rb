@@ -15,7 +15,7 @@ class JobApplication < ActiveRecord::Base
 	using: {tsearch: {dictionary: "english"}}
 
 
-	validates :fullname, :email, :presence => true
+	validates :fullname, :email, :presence => true, length: { maximum: 50 }
 	validates :email, :format => { :with => %r{.+@.+\..+} }, :allow_blank => true
 	validates :contactno, :numericality => { :message => "is invalid" }, :allow_blank => true
 	validates_attachment_presence :resume
