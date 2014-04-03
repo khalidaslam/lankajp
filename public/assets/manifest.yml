@@ -27,6 +27,10 @@ cadsimg/Search.png: cadsimg/Search-3935dc456683258c89dc4405ab19bdeb.png
 cadsimg/Search/index.png: cadsimg/Search-3935dc456683258c89dc4405ab19bdeb.png
 cadsimg/Telephone.png: cadsimg/Telephone-02f634ff45a6d1896dbacc4a0383421b.png
 cadsimg/Telephone/index.png: cadsimg/Telephone-02f634ff45a6d1896dbacc4a0383421b.png
+cadsimg/ajax-loader.gif: cadsimg/ajax-loader-16f55e459ba648bfd1eab6a0b4e1fc45.gif
+cadsimg/ajax-loader/index.gif: cadsimg/ajax-loader-16f55e459ba648bfd1eab6a0b4e1fc45.gif
+cadsimg/ajax-loadersmall.gif: cadsimg/ajax-loadersmall-7a39d8e2dd191c9132e0093e4901bc7a.gif
+cadsimg/ajax-loadersmall/index.gif: cadsimg/ajax-loadersmall-7a39d8e2dd191c9132e0093e4901bc7a.gif
 cadsimg/blank.gif: cadsimg/blank-2ebbd7cb21c3980daa0bddcc9c7ce5fc.gif
 cadsimg/blank/index.gif: cadsimg/blank-2ebbd7cb21c3980daa0bddcc9c7ce5fc.gif
 cadsimg/dockers.jpg: cadsimg/dockers-f71bf5bef683af99c1035edfa1c05666.jpg
@@ -53,6 +57,8 @@ cadsimg/icons/Search.png: cadsimg/icons/Search-3935dc456683258c89dc4405ab19bdeb.
 cadsimg/icons/Search/index.png: cadsimg/icons/Search-3935dc456683258c89dc4405ab19bdeb.png
 cadsimg/icons/Telephone.png: cadsimg/icons/Telephone-02f634ff45a6d1896dbacc4a0383421b.png
 cadsimg/icons/Telephone/index.png: cadsimg/icons/Telephone-02f634ff45a6d1896dbacc4a0383421b.png
+cadsimg/loading.gif: cadsimg/loading-38ac0eb1ac8967dce76954b41f808db5.gif
+cadsimg/loading/index.gif: cadsimg/loading-38ac0eb1ac8967dce76954b41f808db5.gif
 cadsimg/pdficon.jpg: cadsimg/pdficon-9a31d3597a02c93db089b31983a1f115.jpg
 cadsimg/pdficon/index.jpg: cadsimg/pdficon-9a31d3597a02c93db089b31983a1f115.jpg
 cadsimg/spritemap.png: cadsimg/spritemap-82e181cf9db0563178952adb97cbad6c.png
