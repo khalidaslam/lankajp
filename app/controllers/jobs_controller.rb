@@ -68,7 +68,7 @@ private
 def job_tagger(job)
   jbc = "Sri Lanka"
   [jbc, job.title, job.companyname, job.city.name, job.city.province.name, job.classification.name,
-  job.worktype.name, job.careerlevel.name, job.jobskills].join(" ")
+  job.worktype.name, job.jobdesctext, job.careerlevel.name, job.jobskills].join(" ")
 end
 
 end
