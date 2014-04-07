@@ -146,11 +146,13 @@
                         <p style="color:#2c3e50; text-align:center;"><%= job.companyname %></p>
                         <hr style="margin-bottom: 5px; margin-top: 10px; border-color:#bdc3c7; 
                             border-style:dashed;">
+                            <% if false %>
                         <p>
                             <strong>
                                 <img src="<%= asset_path 'cadsimg/srilankan-jobs.png'%>" alt="<%= job.tags %>">
                             </strong>
                         </p>
+                            <% end %>
 
                     </div>
                 <% end %>
