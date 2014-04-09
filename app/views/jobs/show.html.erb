@@ -26,7 +26,7 @@ window.close();
 
             <br />
             <h4 style="text-align:center; text-decoration:underline;"><%= @job.title %> at <%=@job.companyname%> for <%=@job.worktype.name%> in <%=@job.city.name%></h4>
-            <%= image_tag(@job.adimage.url(:original), :style => "text-align:center;  margin: 0 auto;", :class => "img-responsive", :alt => "") %>
+            <%= image_tag(@job.adimage.url(:original), :style => "text-align:center;  margin: 0 auto;", :class => "img-responsive", :alt => "#{@job.title}") %>
             <br /><br />
 
             <div style="text-align:center;">
