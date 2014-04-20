@@ -7,8 +7,8 @@ Your job bearing Job UUID <%= @job.jobuuid %>is online now at http://www.lankajo
 
 You can access applicant's resumes for this job by copying and pasting the following link:
 
-
-http://www.lankajobpost.com/employer/link?utf8=✓&amp;linkcode=<%=@job.employerlinkcode%>
+<% frontadd = "http://www.lankajobpost.com/employer/link?utf8=✓&linkcode="%>
+<%=frontadd%><%=@job.employerlinkcode%>
 
 
 Regards
