@@ -169,7 +169,7 @@ DEPENDENCIES
   jquery-rails (= 3.1.0)
   nested_scaffold (= 0.2.1)
   paperclip (= 4.1.1)
-  passenger
+  passenger (= 4.0.41)
   pg (= 0.17.1)
   pg_search (= 0.7.3)
   quiet_assets (= 1.0.2)
